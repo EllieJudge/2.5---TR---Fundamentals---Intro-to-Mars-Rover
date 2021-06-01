@@ -1,6 +1,7 @@
 const {
     returnsSomething,
-    checkPlateau
+    checkPlateau,
+    checkInitialPosition
 } = require("./mars-rover");
 
 describe('Initial set-up', () => {
@@ -74,12 +75,11 @@ describe('Check is a valid plateau', () => {
 });
 
 describe('Check initial position', () => {
-    test('Check co-ordinates are not 0', () => {
-        expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
-        expect(() => checkPlateau(0, 5)).toThrow("Error: x and y co-ordinates must be greater than 0");
+    test('Has initial position', () => {
+        expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
     });
 
-   
+
 });
 
 

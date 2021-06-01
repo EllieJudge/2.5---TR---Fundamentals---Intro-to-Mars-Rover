@@ -38,13 +38,13 @@ Lower-left coordinate assumed to be: 0 0
 
 Rover 1's starting position: 1 2 N
 
-Rover 1's instructions: LM LM LM LM M
+Rover 1's instructions: LMLMLMLMM
 
 -------------------------------------------
 
 Rover 2's starting position: 3 3 E
 
-Rover 2's instructions: MM RM MR MR RM
+Rover 2's instructions: MMRMMRMRRM
 
 ## Expected Output:
 
