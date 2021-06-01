@@ -22,8 +22,7 @@ describe('Initial set-up', () => {
 
 // The Plateau
 // The first line of input is the upper-right coordinates of the plateau 
-// - Check min, 0,0 max 5,5
-// If greater than 5 or less than 0 fail (as Rover has landed on the wrong plateau!)
+// - Check min, 0,0 
 
 // The Initial Position
 // An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North. 
@@ -46,18 +45,41 @@ describe('Initial set-up', () => {
 // Check for Collisions
 // with other Rovers
 
+// Arrange - set up ingredients to create test 
+// Assertion - what you are checking for? Expected result vs actual result
+// Action - call the method
+
 
 
 describe('Check is a valid plateau', () => {
-
-        // Arrange - set up ingredients to create test 
-        // Assertion - what you are checking for? Expected result vs actual result
-        // Action - call the method
+        // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
+        // let minSize = 0; 
+        // let maxSize = 5; 
 
         test('Check co-ordinates are not 0', () => {
             expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
+            expect(() => checkPlateau(0, 5)).toThrow("Error: x and y co-ordinates must be greater than 0");
         });
-        
+        test('Check co-ordinates are not less than 0', () => {
+            expect(() => checkPlateau(-1, -5)).toThrow("Error: x and y co-ordinates must be greater than 0");
+            expect(() => checkPlateau(-1, -0)).toThrow("Error: x and y co-ordinates must be greater than 0");
+        });
+        test('Check co-ordinates are integers', () => {
+            expect(() => checkPlateau(0.394, 3.91)).toThrow("Error: x and y co-ordinates must be integers");
+        });
+        test('Check co-ordinates are numbers', () => {
+            expect(() => checkPlateau("donkey", "melon")).toThrow("Error: x and y co-ordinates must be numbers");
+            expect(() => checkPlateau("0", "5")).toThrow("Error: x and y co-ordinates must be numbers");
+        });
+});
+
+describe('Check initial position', () => {
+    test('Check co-ordinates are not 0', () => {
+        expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
+        expect(() => checkPlateau(0, 5)).toThrow("Error: x and y co-ordinates must be greater than 0");
+    });
+
+   
 });
 
 
