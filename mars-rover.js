@@ -3,7 +3,7 @@ function returnsSomething () {
 }
 
 function checkPlateau(x, y) {
-    return (x <= 5 && y <= 5)
+    return (x === 5 && y === 5)
 }
 
 
