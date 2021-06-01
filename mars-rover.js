@@ -26,16 +26,17 @@ function checkInitialPosition (initialPos) {
     // if this is passed in as x, y, direction then fine
     // if not will need logic to split out initialPos
 
+    console.log("Init pos:", initialPos)
+
     // 1 2 N
 
     // check this against plateau coordinates
-
-
-
     
     if (initialPos === undefined) {
         throw new Error("Error: rover must have initial position")
     }
+
+   
 
 
 

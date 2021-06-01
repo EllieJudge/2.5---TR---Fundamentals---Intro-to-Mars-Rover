@@ -78,6 +78,11 @@ describe('Check initial position', () => {
     test('Has initial position', () => {
         expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
     });
+    test('Initial position is valid', () => {
+        expect(checkInitialPosition('12N')).toBe(true);
+    });
+
+    
 
 
 });
