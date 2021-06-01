@@ -30,18 +30,24 @@ The output for each rover should be its final co-ordinates and heading.
 
 ## Test Input:
 
-5 5
+Upper-right coordinate of the plateau: 5 5
 
-1 2 N
+Lower-left coordinate assumed to be: 0 0
 
-LMLMLMLMM
+-------------------------------------------
 
-3 3 E
+Rover 1's starting position: 1 2 N
 
-MMRMMRMRRM
+Rover 1's instructions: LM LM LM LM M
+
+-------------------------------------------
+
+Rover 2's starting position: 3 3 E
+
+Rover 2's instructions: MM RM MR MR RM
 
 ## Expected Output:
 
-1 3 N
+Rover 1's end position: 1 3 N
 
-5 1 E
+Rover 2's end position: 5 1 E
