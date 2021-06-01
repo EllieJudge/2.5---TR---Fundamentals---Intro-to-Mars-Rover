@@ -22,7 +22,7 @@ describe('Initial set-up', () => {
 
 // The Plateau
 // The first line of input is the upper-right coordinates of the plateau 
-// - Check is 5,5
+// - Check min, 0,0 max 5,5
 // If greater than 5 or less than 0 fail (as Rover has landed on the wrong plateau!)
 
 // The Initial Position
@@ -46,14 +46,18 @@ describe('Initial set-up', () => {
 // Check for Collisions
 // with other Rovers
 
-describe('Check is the correct plateau', () => {
-    test('Upper-right coordinates of the plateau are 5, 5', () => {
-        expect(checkPlateau(5, 5)).toBe(true); 
-        expect(checkPlateau(1, 3)).toBe(false); 
-        expect(checkPlateau("5", "5")).toBe(false); 
-        expect(checkPlateau(0, 0)).toBe(false); 
-        expect(checkPlateau(5, 6)).toBe(false); 
-    });
+
+
+describe('Check is a valid plateau', () => {
+
+        // Arrange - set up ingredients to create test 
+        // Assertion - what you are checking for? Expected result vs actual result
+        // Action - call the method
+
+        test('Check co-ordinates are not 0', () => {
+            expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
+        });
+        
 });
 
 

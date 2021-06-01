@@ -3,7 +3,10 @@ function returnsSomething () {
 }
 
 function checkPlateau(x, y) {
-    return (x === 5 && y === 5)
+    if(x === 0 || y === 0) {
+        throw new Error("Error: x and y co-ordinates must be greater than 0");
+    }
+
 }
 
 
