@@ -75,16 +75,23 @@ describe('Check is a valid plateau', () => {
 });
 
 describe('Check initial position', () => {
+
     test('Has initial position', () => {
         expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
     });
 
-    test('Initial position is valid', () => {
+    test('Throws error if initial position is not valid', () => {
         expect(() => checkInitialPosition('1 2 X')).toThrow("Error: must have N, S, E or W direction");
         expect(() => checkInitialPosition('1 2 Peanuts')).toThrow("Error: must have N, S, E or W direction");
         expect(() => checkInitialPosition('1 2 ')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
         expect(() => checkInitialPosition('N')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
+    });
+
+    test('If initial position is valid, position is returned', () => {
         expect(checkInitialPosition('1 2 N')).toBe('1 2 N');
+        expect(checkInitialPosition('1 5 E')).toBe('1 5 E');
+        expect(checkInitialPosition('5 5 W')).toBe('5 5 W');
+        expect(checkInitialPosition('0 0 S')).toBe('0 0 S');
     });
 
 
