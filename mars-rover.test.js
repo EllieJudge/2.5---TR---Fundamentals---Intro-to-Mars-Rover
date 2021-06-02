@@ -108,13 +108,17 @@ describe('Check rovers initial position', () => {
 describe('Check instructions', () => {
 
     const validInstructions = 'LMLMLMLMM';
-    
+
     it('returns instructions if valid rover instructions have been received', () => {
     expect(checkInstructions(validInstructions)).toEqual(validInstructions);
     });
 
-    test('It throws an error if instructions are not correct letters', () => {
-        const invalidInstructions = 'P';
-        expect(() => checkInstructions(invalidInstructions)).toThrow("Error: instructions must be letters L, R or M");
+    test('It throws an error if instructions are not correct letters FOR LOOP', () => {
+        
+        const invalidInstructions = ['LMLMPQE2D', "kitten", 2, true, false, "", "AC-12"];
+
+        invalidInstructions.forEach(instruction => {
+            expect(() => checkInstructions(instruction)).toThrow("Error: instructions must be letters L, R or M");
+        })
     });
 });

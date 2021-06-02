@@ -57,6 +57,10 @@ function checkInitialPosition(initialPos) {
 
 function checkInstructions(instructions) {
 
+    if (typeof instructions !== "string" || instructions === "") {
+        throw new Error("Error: instructions must be letters L, R or M")
+    }
+
     const validLetters = ['L', 'R', 'M'];
     const invalidLetters = instructions.split('').filter(letter => !validLetters.includes(letter));
 
