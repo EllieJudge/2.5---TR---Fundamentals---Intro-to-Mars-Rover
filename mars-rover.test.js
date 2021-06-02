@@ -138,14 +138,14 @@ describe('Check instructions', () => {
 describe('Rover changes direction', () => {
 
     const initialPos = '1 2 N';
-    const turnL = "L"
-    const turnR = "R"
     
     it('returns the cardinal direction to its original positions left if passed "L"', () => {
-        expect(changeDirection(initialPos, turnL)).toEqual('1 2 W');
+        expect(changeDirection(initialPos, "L")).toEqual('1 2 W');
     });
+
+
     it('returns the cardinal direction to its original positions right if passed "R"', () => {
-        expect(changeDirection(initialPos, turnR)).toEqual('1 2 E');
+        expect(changeDirection(initialPos, "R")).toEqual('1 2 E');
     });
 
 });
