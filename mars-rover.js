@@ -25,24 +25,33 @@ function checkInitialPosition (initialPos) {
     // if this is passed in as x, y, direction then fine
     // if not will need logic to split out initialPos
     // 1 2 N
-
     // check this against plateau coordinates
 
-    // can the plateau be bigger than 5?!
-    
     if (initialPos === undefined) {
         throw new Error("Error: rover must have initial position")
     }
+
+    if (initialPos.length < 5) {
+        throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
+    }
+
+    let validDirection = ["N", "E", "S", "W"]
+    let direction = initialPos.charAt(initialPos.length-1)
+    let match = validDirection.filter(letter => letter === direction)
+
+
+    console.log("match ", match )
+
+    if (match.length === 0) {
+        throw new Error("Error: must have N, S, E or W direction");
+    }
+
+
 
 
     if (initialPos == '1 2 N') {
         return true
     }
-
-  
-
-
-
 
 }
 

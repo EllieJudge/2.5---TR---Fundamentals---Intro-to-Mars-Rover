@@ -81,7 +81,8 @@ describe('Check initial position', () => {
 
     test('Initial position is valid', () => {
         expect(checkInitialPosition('1 2 N')).toBe(true);
-        expect(() => checkInitialPosition('12')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
+        expect(() => checkInitialPosition('1 2 X')).toThrow("Error: must have N, S, E or W direction");
+        expect(() => checkInitialPosition('1 2 ')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
     });
 
 
