@@ -75,8 +75,55 @@ function checkInstructions(instructions) {
 }
 
 
+// Change direction
+// If L or R
+// turn(N (initialPos[2]))
+// switch (L or R)
+// N -> returns (L) W or (R) E
+// E -> returns N or S
+// S -> returns E or W
+// W -> returns S or N
+
+function changeDirection(initialPos, turnL) {
+
+    let currentDirection = initialPos.split(' ')
+    let newDirection
+
+    if (turnL) {
+        switch (currentDirection[2]) {
+            case "N":
+                newDirection = "W"
+                break;
+            case "E":
+                newDirection = "N"
+                break;
+            case "S":
+                newDirection = "E"
+                break;
+            case "W":
+                newDirection = "S"
+                break;
+            default:
+            // code block
+        }
+    }
 
 
+    console.log("currentDirection", currentDirection.pop())
+
+    console.log("currentDirection", currentDirection)
+
+    console.log("currentDirection", currentDirection.push(newDirection))
+
+    console.log("currentDirection", currentDirection)
+
+    console.log("newtDirection", newDirection)
+
+    currentDirection.pop()
+    currentDirection.push(newDirection)
+    return currentDirection.join(' ')
+
+}
 
 
 
@@ -84,6 +131,7 @@ module.exports = {
     returnsSomething,
     checkPlateau,
     checkInitialPosition,
-    checkInstructions
+    checkInstructions,
+    changeDirection
 
 };
