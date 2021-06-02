@@ -4,17 +4,7 @@ function returnsSomething () {
 
 function checkPlateau(x, y) {
 
-    // console.log(x, y)
-
     let plateau = []
-
-    // console.log(plateau)
-
-    plateau.push(x, y)
-
-    // console.log(plateau)
-
-    return plateau
 
     if (typeof y == "string" || typeof x == "string") {
         throw new Error("Error: x and y co-ordinates must be numbers");
@@ -29,7 +19,7 @@ function checkPlateau(x, y) {
         throw new Error("Error: x and y co-ordinates must be greater than 0");
     }
 
-    console.log(plateau.push(x, y))
+    plateau.push(x, y)
     
     return plateau
 

@@ -79,7 +79,7 @@ xdescribe('Check is a valid plateau', () => {
 
 describe('Check Plateau function returns an array of x, y co-ordinates', () => {
     const expected = [5, 5];
-    it('returns expected co-ordinates', () => {
+    it('returns expected co-ordinates if correct co-ordinates received', () => {
     expect(checkPlateau(5, 5)).toEqual(expected);
     });
     // it('does not match if received does not contain expected elements', () => {
