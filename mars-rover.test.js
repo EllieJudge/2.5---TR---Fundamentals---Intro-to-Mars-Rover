@@ -21,22 +21,6 @@ describe('Initial set-up', () => {
 
 // Things to test / think about:
 
-// The Plateau
-// The first line of input is the upper-right coordinates of the plateau 
-// - Check min, 0,0 
-
-// The Initial Position
-// An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North. 
-// Assume that the square directly North from (x, y) is (x, y+1)
-// The position is made up of two integers - check integers (not string or decimal)
-
-// The Direction/s && Instructions
-// Each rover has two lines of input - check has 2 and not null
-// The first line gives the rover's position - check it has a position / this is valid 
-// second line is a series of instructions
-// The possible letters are 'L', 'R' and 'M'. 
-// 'M' means move forward one grid point - and maintain the same heading.
-
 // The Final Position
 // produces expected outputs
 // Not string or decimal
@@ -51,6 +35,9 @@ describe('Initial set-up', () => {
 // Action - call the method
 
 
+// The Plateau
+// The first line of input is the upper-right coordinates of the plateau 
+// - Check min, 0,0 
 
 describe('Check is a valid plateau', () => {
         // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
@@ -72,17 +59,18 @@ describe('Check is a valid plateau', () => {
             expect(() => checkPlateau("donkey", "melon")).toThrow("Error: x and y co-ordinates must be numbers");
             expect(() => checkPlateau("0", "5")).toThrow("Error: x and y co-ordinates must be numbers");
         });
-        const expected = [5, 5];
-        it('returns expected co-ordinates if valid co-ordinates received', () => {
-        expect(checkPlateau(5, 5)).toEqual(expected);
+        const validPlateau = [5, 5];
+        it('returns co-ordinates if valid plateau co-ordinates have been received', () => {
+        expect(checkPlateau(5, 5)).toEqual(validPlateau);
         });
 });
 
-describe('Check Plateau function returns an array of x, y co-ordinates', () => {
-    
-});
+// The Initial Position
+// An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North. 
+// Assume that the square directly North from (x, y) is (x, y+1)
+// The position is made up of two integers - check integers (not string or decimal)
 
-describe('Check initial position', () => {
+describe('Check rovers initial position', () => {
 
     test('Has initial position', () => {
         expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
@@ -96,7 +84,9 @@ describe('Check initial position', () => {
     });
 
     // test('Throws error if initial position is not on the plateau', () => {
-        
+    //     let plateauSize = '5 5'
+    //     let roverInitialPos = '1 2 N'
+
     // });
 
     test('If initial position is valid, position is returned', () => {
@@ -108,3 +98,16 @@ describe('Check initial position', () => {
 });
 
 
+// The Direction/s && Instructions
+// Each rover has two lines of input - check has 2 and not null
+// The first line gives the rover's position - check it has a position / this is valid 
+// second line is a series of instructions
+// The possible letters are 'L', 'R' and 'M'. 
+// 'M' means move forward one grid point - and maintain the same heading.
+
+describe('Check instructions', () => {
+    const validInstructions = ['L', 'R', 'M'];
+    it('returns instructions if valid rover instructions have been received', () => {
+    expect(checkInstructions('LMLMLMLMM')).toEqual('LMLMLMLMM');
+    });
+});
