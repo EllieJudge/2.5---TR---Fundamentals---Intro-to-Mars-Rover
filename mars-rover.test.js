@@ -41,29 +41,29 @@ describe('Initial set-up', () => {
 // - Check min, 0,0 
 
 describe('Check is a valid plateau', () => {
-        // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
-        // let minSize = 0; 
-        // let maxSize = 5; 
+    // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
+    // let minSize = 0; 
+    // let maxSize = 5; 
 
-        test('Check co-ordinates are not 0', () => {
-            expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
-            expect(() => checkPlateau(0, 5)).toThrow("Error: x and y co-ordinates must be greater than 0");
-        });
-        test('Check co-ordinates are not less than 0', () => {
-            expect(() => checkPlateau(-1, -5)).toThrow("Error: x and y co-ordinates must be greater than 0");
-            expect(() => checkPlateau(-1, -0)).toThrow("Error: x and y co-ordinates must be greater than 0");
-        });
-        test('Check co-ordinates are integers', () => {
-            expect(() => checkPlateau(0.394, 3.91)).toThrow("Error: x and y co-ordinates must be integers");
-        });
-        test('Check co-ordinates are numbers', () => {
-            expect(() => checkPlateau("donkey", "melon")).toThrow("Error: x and y co-ordinates must be numbers");
-            expect(() => checkPlateau("0", "5")).toThrow("Error: x and y co-ordinates must be numbers");
-        });
-        const validPlateau = [5, 5];
-        it('returns co-ordinates if valid plateau co-ordinates have been received', () => {
+    test('Check co-ordinates are not 0', () => {
+        expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
+        expect(() => checkPlateau(0, 5)).toThrow("Error: x and y co-ordinates must be greater than 0");
+    });
+    test('Check co-ordinates are not less than 0', () => {
+        expect(() => checkPlateau(-1, -5)).toThrow("Error: x and y co-ordinates must be greater than 0");
+        expect(() => checkPlateau(-1, -0)).toThrow("Error: x and y co-ordinates must be greater than 0");
+    });
+    test('Check co-ordinates are integers', () => {
+        expect(() => checkPlateau(0.394, 3.91)).toThrow("Error: x and y co-ordinates must be integers");
+    });
+    test('Check co-ordinates are numbers', () => {
+        expect(() => checkPlateau("donkey", "melon")).toThrow("Error: x and y co-ordinates must be numbers");
+        expect(() => checkPlateau("0", "5")).toThrow("Error: x and y co-ordinates must be numbers");
+    });
+    const validPlateau = [5, 5];
+    it('returns co-ordinates if valid plateau co-ordinates have been received', () => {
         expect(checkPlateau(5, 5)).toEqual(validPlateau);
-        });
+    });
 });
 
 // The Initial Position
@@ -110,11 +110,11 @@ describe('Check instructions', () => {
     const validInstructions = 'LMLMLMLMM';
 
     it('returns instructions if valid rover instructions have been received', () => {
-    expect(checkInstructions(validInstructions)).toEqual(validInstructions);
+        expect(checkInstructions(validInstructions)).toEqual(validInstructions);
     });
 
-    test('It throws an error if instructions are not correct letters FOR LOOP', () => {
-        
+    test('It throws an error if instructions are not correct letters', () => {
+
         const invalidInstructions = ['LMLMPQE2D', "kitten", 2, true, false, "", "AC-12"];
 
         invalidInstructions.forEach(instruction => {
@@ -122,3 +122,30 @@ describe('Check instructions', () => {
         })
     });
 });
+
+// Change direction
+// If L or R
+// turn(N (initialPos[2]))
+// switch (L or R)
+// N -> returns (L) W or (R) E
+// E -> returns N or S
+// S -> returns E or W
+// W -> returns S or N
+
+
+
+describe('Rover changes direction', () => {
+
+    const initialPos = '1 2 N';
+    const turnL = "L"
+    const turnR = "R"
+    
+    it('returns the cardinal direction to its original positions left if passed "L"', () => {
+        expect(changeDirection(initialPos, turnL)).toEqual('1 2 W');
+    });
+
+});
+
+
+
+

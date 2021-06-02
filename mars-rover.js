@@ -23,6 +23,7 @@ function checkPlateau(x, y) {
 
     plateau.push(x, y)
 
+    console.log("plateau size: ", plateau)
     return plateau
 
 }
@@ -42,14 +43,15 @@ function checkInitialPosition(initialPos) {
         throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
     }
 
-    let validDirection = ["N", "E", "S", "W"]
-    let direction = initialPos.charAt(initialPos.length - 1)
-    let match = validDirection.filter(letter => letter === direction)
+    const validDirection = ["N", "E", "S", "W"]
+    const direction = initialPos.charAt(initialPos.length - 1)
+    const match = validDirection.filter(letter => letter === direction)
 
     if (match.length === 0) {
         throw new Error("Error: must have N, S, E or W direction");
     }
 
+    console.log("initial position: ", initialPos)
     return initialPos
 
 }
@@ -68,6 +70,7 @@ function checkInstructions(instructions) {
         throw new Error("Error: instructions must be letters L, R or M")
     }
 
+    console.log("rover instructions: ", instructions)
     return instructions
 }
 
