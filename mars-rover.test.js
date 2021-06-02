@@ -107,8 +107,8 @@ describe('Check rovers initial position', () => {
 // 'M' means move forward one grid point - and maintain the same heading.
 
 describe('Check instructions', () => {
-    const validInstructions = ['L', 'R', 'M'];
+    const validInstructions = 'LMLMLMLMM';
     it('returns instructions if valid rover instructions have been received', () => {
-    expect(checkInstructions('LMLMLMLMM')).toEqual('LMLMLMLMM');
+    expect(checkInstructions(validInstructions)).toEqual('LMLMLMLMM');
     });
 });
