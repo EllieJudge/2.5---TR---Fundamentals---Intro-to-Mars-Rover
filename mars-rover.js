@@ -4,7 +4,7 @@ function returnsSomething () {
 
 function checkPlateau(x, y) {
 
-    if(typeof y == "string" || typeof x == "string") {
+    if (typeof y == "string" || typeof x == "string") {
         throw new Error("Error: x and y co-ordinates must be numbers");
     }
     if (!Number.isInteger(x) || !Number.isInteger(y)) {
@@ -39,15 +39,9 @@ function checkInitialPosition (initialPos) {
     let direction = initialPos.charAt(initialPos.length-1)
     let match = validDirection.filter(letter => letter === direction)
 
-
-    console.log("match ", match )
-
     if (match.length === 0) {
         throw new Error("Error: must have N, S, E or W direction");
     }
-
-
-
 
     if (initialPos == '1 2 N') {
         return true
