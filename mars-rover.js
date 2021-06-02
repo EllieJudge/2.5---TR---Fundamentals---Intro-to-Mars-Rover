@@ -18,6 +18,7 @@ function checkPlateau(x, y) {
     }
     
 
+
 }
 
 
@@ -43,9 +44,7 @@ function checkInitialPosition (initialPos) {
         throw new Error("Error: must have N, S, E or W direction");
     }
 
-    if (initialPos == '1 2 N') {
-        return true
-    }
+    return initialPos
 
 }
 
