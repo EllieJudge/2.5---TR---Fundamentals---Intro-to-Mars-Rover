@@ -86,7 +86,7 @@ function checkInstructions(instructions) {
 
 function changeDirection(initialPos, turnL) {
 
-    let currentDirection = initialPos.split(' ')
+    const currentDirection = initialPos.split(' ')
     let newDirection
 
     if (turnL) {
@@ -108,21 +108,9 @@ function changeDirection(initialPos, turnL) {
         }
     }
 
-
-    console.log("currentDirection", currentDirection.pop())
-
-    console.log("currentDirection", currentDirection)
-
-    console.log("currentDirection", currentDirection.push(newDirection))
-
-    console.log("currentDirection", currentDirection)
-
-    console.log("newtDirection", newDirection)
-
     currentDirection.pop()
     currentDirection.push(newDirection)
     return currentDirection.join(' ')
-
 }
 
 

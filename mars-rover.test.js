@@ -144,6 +144,9 @@ describe('Rover changes direction', () => {
     it('returns the cardinal direction to its original positions left if passed "L"', () => {
         expect(changeDirection(initialPos, turnL)).toEqual('1 2 W');
     });
+    it('returns the cardinal direction to its original positions right if passed "R"', () => {
+        expect(changeDirection(initialPos, turnR)).toEqual('1 2 E');
+    });
 
 });
 
