@@ -1,7 +1,8 @@
 const {
     returnsSomething,
     checkPlateau,
-    checkInitialPosition
+    checkInitialPosition,
+    checkInstructions
 } = require("./mars-rover");
 
 describe('Initial set-up', () => {

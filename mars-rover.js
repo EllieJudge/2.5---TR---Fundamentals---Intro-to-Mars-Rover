@@ -1,5 +1,7 @@
-function returnsSomething () {
+function returnsSomething() {
+
     return true
+
 }
 
 function checkPlateau(x, y) {
@@ -20,13 +22,13 @@ function checkPlateau(x, y) {
     }
 
     plateau.push(x, y)
-    
+
     return plateau
 
 }
 
 
-function checkInitialPosition (initialPos) {
+function checkInitialPosition(initialPos) {
     // if this is passed in as x, y, direction then fine
     // if not will need logic to split out initialPos
     // 1 2 N
@@ -41,7 +43,7 @@ function checkInitialPosition (initialPos) {
     }
 
     let validDirection = ["N", "E", "S", "W"]
-    let direction = initialPos.charAt(initialPos.length-1)
+    let direction = initialPos.charAt(initialPos.length - 1)
     let match = validDirection.filter(letter => letter === direction)
 
     if (match.length === 0) {
@@ -53,7 +55,11 @@ function checkInitialPosition (initialPos) {
 }
 
 
+function checkInstructions(instructions) {
 
+    return instructions
+
+}
 
 
 
@@ -64,5 +70,7 @@ function checkInitialPosition (initialPos) {
 module.exports = {
     returnsSomething,
     checkPlateau,
-    checkInitialPosition
+    checkInitialPosition,
+    checkInstructions
+
 };
