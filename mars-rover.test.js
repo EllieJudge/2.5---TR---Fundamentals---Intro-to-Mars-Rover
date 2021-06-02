@@ -98,7 +98,6 @@ describe('Check rovers initial position', () => {
     });
 });
 
-
 // The Direction/s && Instructions
 // Each rover has two lines of input - check has 2 and not null
 // The first line gives the rover's position - check it has a position / this is valid 
@@ -109,6 +108,11 @@ describe('Check rovers initial position', () => {
 describe('Check instructions', () => {
     const validInstructions = 'LMLMLMLMM';
     it('returns instructions if valid rover instructions have been received', () => {
-    expect(checkInstructions(validInstructions)).toEqual('LMLMLMLMM');
+    expect(checkInstructions(validInstructions)).toEqual(validInstructions);
+    });
+
+    test('It throws an error if instructions are not correct letters', () => {
+        const invalidInstructions = 'P';
+        expect(() => checkInstructions(invalidInstructions)).toThrow("Error: instructions must be letters L, R or M");
     });
 });
