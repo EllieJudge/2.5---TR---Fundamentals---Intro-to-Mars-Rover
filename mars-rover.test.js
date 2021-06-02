@@ -133,8 +133,6 @@ describe('Check instructions', () => {
 // S -> returns E or W
 // W -> returns S or N
 
-
-
 describe('Rover changes direction', () => {
 
     const initialPos = '1 2 N';
@@ -143,10 +141,16 @@ describe('Rover changes direction', () => {
         expect(changeDirection(initialPos, "L")).toEqual('1 2 W');
     });
 
-
     it('returns the cardinal direction to its original positions right if passed "R"', () => {
         expect(changeDirection(initialPos, "R")).toEqual('1 2 E');
     });
+
+    const initialPositions = [ '1 1 N', '1 1 E', '1 1 S', '1 1 W']
+    const newPositions = [ '1 1 W', '1 1 N', '1 1 E', '1 1 S']
+
+    initialPositions.forEach((position, index) => {
+        expect(changeDirection(position, "L")).toEqual(newPositions[index]);
+    })
 
 });
 
