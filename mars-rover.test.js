@@ -52,7 +52,7 @@ describe('Initial set-up', () => {
 
 
 
-xdescribe('Check is a valid plateau', () => {
+describe('Check is a valid plateau', () => {
         // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
         // let minSize = 0; 
         // let maxSize = 5; 
@@ -72,22 +72,17 @@ xdescribe('Check is a valid plateau', () => {
             expect(() => checkPlateau("donkey", "melon")).toThrow("Error: x and y co-ordinates must be numbers");
             expect(() => checkPlateau("0", "5")).toThrow("Error: x and y co-ordinates must be numbers");
         });
-        // test('If Plateau is valid return co-ordinates', () => {
-        //     expect(() => checkPlateau(5, 5)).toEqual([5,5]);
-        // });
+        const expected = [5, 5];
+        it('returns expected co-ordinates if valid co-ordinates received', () => {
+        expect(checkPlateau(5, 5)).toEqual(expected);
+        });
 });
 
 describe('Check Plateau function returns an array of x, y co-ordinates', () => {
-    const expected = [5, 5];
-    it('returns expected co-ordinates if correct co-ordinates received', () => {
-    expect(checkPlateau(5, 5)).toEqual(expected);
-    });
-    // it('does not match if received does not contain expected elements', () => {
-    // expect(checkPlateau(5, 5, 5)).not.toEqual(expect.arrayContaining(expected));
-    // });
+    
 });
 
-xdescribe('Check initial position', () => {
+describe('Check initial position', () => {
 
     test('Has initial position', () => {
         expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
@@ -110,10 +105,6 @@ xdescribe('Check initial position', () => {
         expect(checkInitialPosition('5 5 W')).toBe('5 5 W');
         expect(checkInitialPosition('0 0 S')).toBe('0 0 S');
     });
-
-
-
-
 });
 
 
