@@ -157,5 +157,32 @@ describe('Rover changes direction', () => {
 });
 
 
+// Move forward
 
+// gets current position '1 2 N'
+// x = 1
+// y = 2
+// directon = N
+
+// if direction == N -> y + 1
+// if direction == E -> x + 1
+// if       dir == S -> y - 1
+// if       dir == W -> x - 1
+
+describe('Move Forwards', () => {
+    // check it calls other function or receives current pos?
+    // do this when stripping out into modules
+
+    it('gets the rovers current position', () => {
+        // expect(moveForwards()).toEqual();
+        expect(moveForwards).toHaveBeenCalledWith("param1","param2");
+    });
+
+    // test('If initial position is valid, position is returned', () => {
+    //     expect(moveForwards('1 2 N')).toBe('1 2 N');
+    // });
+
+
+
+});
 

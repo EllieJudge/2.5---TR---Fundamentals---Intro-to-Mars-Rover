@@ -75,15 +75,6 @@ function checkInstructions(instructions) {
 }
 
 
-// Change direction
-// If L or R
-// turn(N (initialPos[2]))
-// switch (L or R)
-// N -> returns (L) W or (R) E
-// E -> returns N or S
-// S -> returns E or W
-// W -> returns S or N
-
 function changeDirection(initialPos, turn) {
 
     const currentDirection = initialPos.split(' ')
@@ -104,7 +95,7 @@ function changeDirection(initialPos, turn) {
                 newDirection = "S"
                 break;
             default:
-                // code block
+            // code block
         }
     }
     else if (turn === "R") {
@@ -127,6 +118,7 @@ function changeDirection(initialPos, turn) {
 
     currentDirection.pop()
     currentDirection.push(newDirection)
+
     return currentDirection.join(' ')
 }
 
