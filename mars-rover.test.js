@@ -114,7 +114,7 @@ describe('Check instructions', () => {
         'L', 'M', 'L',
         'M', 'L', 'M',
         'L', 'M', 'M'
-      ]
+    ]
 
     it('returns instructions if valid rover instructions have been received', () => {
         expect(checkInstructions(validInstructions)).toEqual(valInstructionsArr);

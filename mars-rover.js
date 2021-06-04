@@ -70,7 +70,7 @@ function checkInstructions(instructions) {
     }
 
     console.log("rover instructions: ", instructions.split('')) // LMLMLMLMM
-    return instructions
+    return instructions.split('')
 }
 
 function changeDirection(currentDirection, turn) {
