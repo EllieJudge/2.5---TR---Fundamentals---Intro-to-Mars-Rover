@@ -23,7 +23,7 @@ function checkPlateau(x, y) {
 
     plateau.push(x, y)
 
-    console.log("plateau size: ", plateau)
+    console.log("plateau size: ", plateau) // [5, 5]
     return plateau
 
 }
@@ -51,10 +51,12 @@ function checkInitialPosition(initialPos) {
         throw new Error("Error: must have N, S, E or W direction");
     }
 
-    console.log("initial position: ", initialPos)
+    console.log("initial position: ", initialPos) // 1 2 N
     return initialPos
 
 }
+
+
 
 
 function checkInstructions(instructions) {
@@ -70,7 +72,7 @@ function checkInstructions(instructions) {
         throw new Error("Error: instructions must be letters L, R or M")
     }
 
-    console.log("rover instructions: ", instructions)
+    console.log("rover instructions: ", instructions) // LMLMLMLMM
     return instructions
 }
 
@@ -119,8 +121,56 @@ function changeDirection(initialPos, turn) {
     currentDirection.pop()
     currentDirection.push(newDirection)
 
+    console.log("New Direction", currentDirection.join(' ')) // 1 2 W
     return currentDirection.join(' ')
 }
+
+function moveForwards() {
+
+let initPos = '1 2 N'
+
+// split
+
+let initPosArray = [1, 2, "N"]
+
+let rover = {
+    direction: "N", // initPosArr [2] W S E N
+    x: 1, // initPosArr [0] 0 
+    y: 2 // initPosArr [1]
+}
+
+let directions = 'LMLMLMLMM'
+
+let directionsArr = ['L|','M|','L|','M|','L|','|M','L|','M|','M']
+
+// Goal: 1 3 N
+
+directionsArr.forEach(move => {
+
+    if (move === "L" || move == "R") {
+        // call getNewDirectionFunction (rover.Direction, move)
+            // let newDir = will return -> currentDirection with new direction i.e '1 2 W' S
+            // rover.direction === newDir.split(' ')[2]
+    }
+    if (move === "M") {
+        // if (rover.direction === "W") {
+            //rover.x - 1
+        // IF (rover.direction === "E")
+            // rover.x + 1
+        // else if (rover.direction === "S")
+            // rover.y - 1
+
+        // else if (rover.direction === "N") {
+            // rover.y + 1
+        }
+        }
+    }
+
+)
+
+}
+
+moveForwards()
 
 
 
@@ -129,6 +179,7 @@ module.exports = {
     checkPlateau,
     checkInitialPosition,
     checkInstructions,
-    changeDirection
+    changeDirection,
+    moveForwards
 
 };

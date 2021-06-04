@@ -3,7 +3,8 @@ const {
     checkPlateau,
     checkInitialPosition,
     checkInstructions,
-    changeDirection
+    changeDirection,
+    moveForwards
 } = require("./mars-rover");
 
 describe('Initial set-up', () => {
@@ -174,15 +175,21 @@ describe('Move Forwards', () => {
     // do this when stripping out into modules
 
     it('gets the rovers current position', () => {
-        // expect(moveForwards()).toEqual();
-        expect(moveForwards).toHaveBeenCalledWith("param1","param2");
+
+        const myMock = jest.fn();
+
+        const a = new myMock();
+        const b = {};
+        const bound = myMock.bind(b);
+        bound();
+
+        console.log("HELLOOOO", myMock.mock.instances);
+        // > [ <a>, <b> ]
+        // expect(moveForwards).toHaveBeenCalledWith("param1","param2");
     });
 
     // test('If initial position is valid, position is returned', () => {
     //     expect(moveForwards('1 2 N')).toBe('1 2 N');
     // });
-
-
-
 });
 
