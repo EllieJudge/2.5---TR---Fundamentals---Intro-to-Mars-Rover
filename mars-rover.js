@@ -116,7 +116,7 @@ function changeDirection(currentDirection, turn) {
     return newDirection
 }
 
-function moveForwards(plateau) {
+function moveForwards(plateau, initialPos, instructions) {
 
     console.log("Mock call: ", plateau)
 

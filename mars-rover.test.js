@@ -195,7 +195,8 @@ describe('Move Forwards function', () => {
         const plateau = [5, 5]
         const initialPos = '1 2 N'
         const instructions = 'LMLMLMLMM'
-        move(plateau)
+        
+        move(plateau, initialPos, instructions)
 
         expect(move).toHaveBeenCalledTimes(1); // true
         expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);
