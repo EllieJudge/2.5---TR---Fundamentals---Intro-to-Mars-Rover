@@ -94,9 +94,9 @@ describe('Check rovers initial position', () => {
 
     test('If initial position is valid, position is returned', () => {
         expect(checkInitialPosition('1 2 N')).toBe('1 2 N');
-        expect(checkInitialPosition('1 5 E')).toBe('1 5 E');
-        expect(checkInitialPosition('5 5 W')).toBe('5 5 W');
-        expect(checkInitialPosition('0 0 S')).toBe('0 0 S');
+        // expect(checkInitialPosition('1 5 E')).toBe('1 5 E');
+        // expect(checkInitialPosition('5 5 W')).toBe('5 5 W');
+        // expect(checkInitialPosition('0 0 S')).toBe('0 0 S');
     });
 });
 
@@ -142,7 +142,7 @@ describe('Check instructions', () => {
 describe('Rover changes direction', () => {
 
     const initialDirection = 'N'
-    
+
     it('returns the cardinal direction to its original positions left if passed "L"', () => {
         expect(changeDirection(initialDirection, 'L')).toEqual('W');
     });
@@ -151,10 +151,10 @@ describe('Rover changes direction', () => {
         expect(changeDirection(initialDirection, 'R')).toEqual('E');
     });
 
-    const initialPositions = [ 'N', 'E', 'S', 'W', 'N', 'E', 'S', 'W',]
-    const newPositions = [ 'W', 'N', 'E', 'S', 'E', 'S', 'W', 'N']
-    
-    const lOrR = [ 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
+    const initialPositions = ['N', 'E', 'S', 'W', 'N', 'E', 'S', 'W',]
+    const newPositions = ['W', 'N', 'E', 'S', 'E', 'S', 'W', 'N']
+
+    const lOrR = ['L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
 
     initialPositions.forEach((position, index) => {
         expect(changeDirection(position, lOrR[index])).toEqual(newPositions[index]);
@@ -174,8 +174,29 @@ describe('Rover changes direction', () => {
 // if       dir == S -> y - 1
 // if       dir == W -> x - 1
 
-// describe('Move Forwards', () => {
-//     // check it calls other function or receives current pos?
-//     // do this when stripping out into modules
-// });
+describe('Move Forwards', () => {
+    // check it calls other function or receives current pos?
+    // do this when stripping out into modules
+
+    move = require('./mars-rover').moveForwards;
+    move = jest.fn();
+
+
+    it('should add one and not call child Fn', () => {
+        // expect(main(1)).toBe(2);
+
+        move()
+
+        expect(move).toHaveBeenCalledTimes(1); // true
+        expect(move).toHaveBeenCalledWith();
+    });
+
+    // it('should add one and call child Fn', () => {
+    //     expect(main(2)).toBe(3);
+
+    //     expect(child).toHaveBeenCalledWith(4);
+    //     expect(child).toHaveBeenCalledTimes(1);
+    // });
+
+});
 

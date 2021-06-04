@@ -28,7 +28,6 @@ function checkPlateau(x, y) {
 
 }
 
-
 function checkInitialPosition(initialPos) {
     // if this is passed in as x, y, direction then fine
     // if not will need logic to split out initialPos
@@ -117,7 +116,18 @@ function changeDirection(currentDirection, turn) {
     return newDirection
 }
 
-// function moveForwards() {
+function moveForwards(plateau) {
+
+    console.log("Mock call: ", plateau)
+
+    return plateau
+
+
+    // Test: it recieves 3 arguments '5, 5', '1 2 N', 'LMLMLMLMM'
+    
+    // call checkPlateau -> [5, 5]
+    // call checkInitialPos -> '1 2 N'
+    // set rover object?
 
 // let initPos = '1 2 N'
 
@@ -151,7 +161,6 @@ function changeDirection(currentDirection, turn) {
             // rover.x + 1
         // else if (rover.direction === "S")
             // rover.y - 1
-
         // else if (rover.direction === "N") {
             // rover.y + 1
         // }
@@ -160,7 +169,7 @@ function changeDirection(currentDirection, turn) {
 
 // )
 
-// }
+}
 
 // moveForwards()
 
@@ -172,6 +181,6 @@ module.exports = {
     checkInitialPosition,
     checkInstructions,
     changeDirection,
-    // moveForwards
+    moveForwards
 
 };
