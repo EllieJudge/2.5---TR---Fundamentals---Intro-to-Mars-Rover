@@ -75,11 +75,7 @@ function checkInstructions(instructions) {
 
 function changeDirection(currentDirection, turn) {
 
-    console.log("Current Direction !!!! ", currentDirection)
-
-    // want to take in position (whatever that might be regardless of intial or not)
-
-    // const currentDirection = initialPos.split(' ') //N
+    console.log("Current Direction:", currentDirection)
     let newDirection
 
     if (turn === "L") {
@@ -97,7 +93,6 @@ function changeDirection(currentDirection, turn) {
                 newDirection = "S"
                 break;
             default:
-            // code block
         }
     }
     else if (turn === "R") {
@@ -118,16 +113,7 @@ function changeDirection(currentDirection, turn) {
         }
     }
 
-    // currentDirection.pop()
-    // currentDirection.push(newDirection)
-
-    // console.log("New Direction", currentDirection.join(' ')) // 1 2 W
-
-    // want it to output new direction as 'Letter' 
-    // return currentDirection.join(' ')
-
-    console.log("new direction", newDirection)
-
+    console.log("New Direction", newDirection)
     return newDirection
 }
 
