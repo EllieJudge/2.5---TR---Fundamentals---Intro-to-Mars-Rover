@@ -110,9 +110,14 @@ describe('Check rovers initial position', () => {
 describe('Check instructions', () => {
 
     const validInstructions = 'LMLMLMLMM';
+    const valInstructionsArr = [
+        'L', 'M', 'L',
+        'M', 'L', 'M',
+        'L', 'M', 'M'
+      ]
 
     it('returns instructions if valid rover instructions have been received', () => {
-        expect(checkInstructions(validInstructions)).toEqual(validInstructions);
+        expect(checkInstructions(validInstructions)).toEqual(valInstructionsArr);
     });
 
     test('It throws an error if instructions are not correct letters', () => {

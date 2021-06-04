@@ -69,7 +69,7 @@ function checkInstructions(instructions) {
         throw new Error("Error: instructions must be letters L, R or M")
     }
 
-    console.log("rover instructions: ", instructions) // LMLMLMLMM
+    console.log("rover instructions: ", instructions.split('')) // LMLMLMLMM
     return instructions
 }
 
