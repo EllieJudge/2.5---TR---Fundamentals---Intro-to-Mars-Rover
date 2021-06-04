@@ -56,9 +56,6 @@ function checkInitialPosition(initialPos) {
 
 }
 
-
-
-
 function checkInstructions(instructions) {
 
     if (typeof instructions !== "string" || instructions === "") {
@@ -76,8 +73,9 @@ function checkInstructions(instructions) {
     return instructions
 }
 
-
 function changeDirection(initialPos, turn) {
+
+    // want to take in position (whatever that might be regardless of intial or not)
 
     const currentDirection = initialPos.split(' ')
     let newDirection
@@ -122,37 +120,39 @@ function changeDirection(initialPos, turn) {
     currentDirection.push(newDirection)
 
     console.log("New Direction", currentDirection.join(' ')) // 1 2 W
+
+    // want it to output new direction as 'Letter' 
     return currentDirection.join(' ')
 }
 
-function moveForwards() {
+// function moveForwards() {
 
-let initPos = '1 2 N'
+// let initPos = '1 2 N'
 
 // split
 
-let initPosArray = [1, 2, "N"]
+// let initPosArray = [1, 2, "N"]
 
-let rover = {
-    direction: "N", // initPosArr [2] W S E N
-    x: 1, // initPosArr [0] 0 
-    y: 2 // initPosArr [1]
-}
+// let rover = {
+//     direction: "N", // initPosArr [2] W S E N
+//     x: 1, // initPosArr [0] 0 
+//     y: 2 // initPosArr [1]
+// }
 
-let directions = 'LMLMLMLMM'
+// let directions = 'LMLMLMLMM'
 
-let directionsArr = ['L|','M|','L|','M|','L|','|M','L|','M|','M']
+// let directionsArr = ['L|','M|','L|','M|','L|','|M','L|','M|','M']
 
 // Goal: 1 3 N
 
-directionsArr.forEach(move => {
+// directionsArr.forEach(move => {
 
-    if (move === "L" || move == "R") {
+    // if (move === "L" || move == "R") {
         // call getNewDirectionFunction (rover.Direction, move)
             // let newDir = will return -> currentDirection with new direction i.e '1 2 W' S
             // rover.direction === newDir.split(' ')[2]
-    }
-    if (move === "M") {
+    // }
+    // if (move === "M") {
         // if (rover.direction === "W") {
             //rover.x - 1
         // IF (rover.direction === "E")
@@ -162,15 +162,15 @@ directionsArr.forEach(move => {
 
         // else if (rover.direction === "N") {
             // rover.y + 1
-        }
-        }
-    }
+        // }
+        // }
+    // }
 
-)
+// )
 
-}
+// }
 
-moveForwards()
+// moveForwards()
 
 
 
@@ -180,6 +180,6 @@ module.exports = {
     checkInitialPosition,
     checkInstructions,
     changeDirection,
-    moveForwards
+    // moveForwards
 
 };

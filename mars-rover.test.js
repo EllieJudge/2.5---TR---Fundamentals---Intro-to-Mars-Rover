@@ -137,26 +137,26 @@ describe('Check instructions', () => {
 describe('Rover changes direction', () => {
 
     const initialPos = '1 2 N';
+    const newDirection = 'W'
     
     it('returns the cardinal direction to its original positions left if passed "L"', () => {
-        expect(changeDirection(initialPos, "L")).toEqual('1 2 W');
+        expect(changeDirection(initialPos, "L")).toEqual('W');
     });
 
-    it('returns the cardinal direction to its original positions right if passed "R"', () => {
-        expect(changeDirection(initialPos, "R")).toEqual('1 2 E');
-    });
+    // it('returns the cardinal direction to its original positions right if passed "R"', () => {
+    //     expect(changeDirection(initialPos, "R")).toEqual('1 2 E');
+    // });
 
-    const initialPositions = [ '1 1 N', '1 1 E', '1 1 S', '1 1 W', '1 1 N', '1 1 E', '1 1 S', '1 1 W',]
-    const newPositions = [ '1 1 W', '1 1 N', '1 1 E', '1 1 S', '1 1 E', '1 1 S', '1 1 W', '1 1 N']
+    // const initialPositions = [ '1 1 N', '1 1 E', '1 1 S', '1 1 W', '1 1 N', '1 1 E', '1 1 S', '1 1 W',]
+    // const newPositions = [ '1 1 W', '1 1 N', '1 1 E', '1 1 S', '1 1 E', '1 1 S', '1 1 W', '1 1 N']
     
-    const lOrR = [ 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
+    // const lOrR = [ 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
 
-    initialPositions.forEach((position, index) => {
-        expect(changeDirection(position, lOrR[index])).toEqual(newPositions[index]);
-    })
+    // initialPositions.forEach((position, index) => {
+    //     expect(changeDirection(position, lOrR[index])).toEqual(newPositions[index]);
+    // })
 
 });
-
 
 // Move forward
 
@@ -170,26 +170,8 @@ describe('Rover changes direction', () => {
 // if       dir == S -> y - 1
 // if       dir == W -> x - 1
 
-describe('Move Forwards', () => {
-    // check it calls other function or receives current pos?
-    // do this when stripping out into modules
-
-    it('gets the rovers current position', () => {
-
-        const myMock = jest.fn();
-
-        const a = new myMock();
-        const b = {};
-        const bound = myMock.bind(b);
-        bound();
-
-        console.log("HELLOOOO", myMock.mock.instances);
-        // > [ <a>, <b> ]
-        // expect(moveForwards).toHaveBeenCalledWith("param1","param2");
-    });
-
-    // test('If initial position is valid, position is returned', () => {
-    //     expect(moveForwards('1 2 N')).toBe('1 2 N');
-    // });
-});
+// describe('Move Forwards', () => {
+//     // check it calls other function or receives current pos?
+//     // do this when stripping out into modules
+// });
 
