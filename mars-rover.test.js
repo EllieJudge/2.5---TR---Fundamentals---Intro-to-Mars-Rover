@@ -185,10 +185,12 @@ describe('Move Forwards', () => {
     it('should add one and not call child Fn', () => {
         // expect(main(1)).toBe(2);
 
-        move()
+
+        let plateau = [5, 5]
+        move(plateau)
 
         expect(move).toHaveBeenCalledTimes(1); // true
-        expect(move).toHaveBeenCalledWith();
+        expect(move).toHaveBeenCalledWith(plateau);
     });
 
     // it('should add one and call child Fn', () => {
