@@ -146,14 +146,14 @@ describe('Rover changes direction', () => {
         expect(changeDirection(initialDirection, 'R')).toEqual('E');
     });
 
-    // const initialPositions = [ '1 1 N', '1 1 E', '1 1 S', '1 1 W', '1 1 N', '1 1 E', '1 1 S', '1 1 W',]
-    // const newPositions = [ '1 1 W', '1 1 N', '1 1 E', '1 1 S', '1 1 E', '1 1 S', '1 1 W', '1 1 N']
+    const initialPositions = [ 'N', 'E', 'S', 'W', 'N', 'E', 'S', 'W',]
+    const newPositions = [ 'W', 'N', 'E', 'S', 'E', 'S', 'W', 'N']
     
-    // const lOrR = [ 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
+    const lOrR = [ 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
 
-    // initialPositions.forEach((position, index) => {
-    //     expect(changeDirection(position, lOrR[index])).toEqual(newPositions[index]);
-    // })
+    initialPositions.forEach((position, index) => {
+        expect(changeDirection(position, lOrR[index])).toEqual(newPositions[index]);
+    })
 
 });
 
