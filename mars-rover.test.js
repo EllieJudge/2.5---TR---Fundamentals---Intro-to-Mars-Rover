@@ -174,24 +174,42 @@ describe('Rover changes direction', () => {
 // if       dir == S -> y - 1
 // if       dir == W -> x - 1
 
-describe('Move Forwards', () => {
+describe('Move Forwards function', () => {
     // check it calls other function or receives current pos?
     // do this when stripping out into modules
 
     move = require('./mars-rover').moveForwards;
     move = jest.fn();
 
+    // beforeEach(() => {
+    //     initializeCityDatabase();
+    //   });
+      
+    //   afterEach(() => {
+    //     clearCityDatabase();
+    //   });
 
-    it('should add one and not call child Fn', () => {
-        // expect(main(1)).toBe(2);
 
+    it('should be called with plateau co-ordinates, rovers initial position and instructions as arguments', () => {
 
-        let plateau = [5, 5]
+        const plateau = [5, 5]
         move(plateau)
 
         expect(move).toHaveBeenCalledTimes(1); // true
-        expect(move).toHaveBeenCalledWith(plateau);
+        expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);
     });
+
+    // it('should be called with plateau and initial position arguments', () => {
+    //     // expect(main(1)).toBe(2);
+
+    //     const plateau = [5, 5]
+    //     let initialPos = '1 2 n'
+    //     move(plateau)
+
+    //     expect(move).toHaveBeenCalledTimes(1); // true
+    //     expect(move).toHaveBeenCalledWith(plateau);
+    //     expect(move).toHaveBeenCalledWith(plateau, initialPos);
+    // });
 
     // it('should add one and call child Fn', () => {
     //     expect(main(2)).toBe(3);
