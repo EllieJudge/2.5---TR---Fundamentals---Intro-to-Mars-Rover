@@ -94,9 +94,9 @@ describe('Check rovers initial position', () => {
 
     test('If initial position is valid, position is returned as an array', () => {
         expect(checkInitialPosition('1 2 N')).toEqual([1, 2, 'N']);
-        // expect(checkInitialPosition('1 5 E')).toBe('1 5 E');
-        // expect(checkInitialPosition('5 5 W')).toBe('5 5 W');
-        // expect(checkInitialPosition('0 0 S')).toBe('0 0 S');
+        expect(checkInitialPosition('1 5 E')).toEqual([1, 5, 'E']);
+        expect(checkInitialPosition('5 5 W')).toEqual([5, 5, 'W']);
+        expect(checkInitialPosition('0 1 S')).toEqual([0, 1, 'S']);
     });
 });
 
