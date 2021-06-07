@@ -118,10 +118,6 @@ function changeDirection(currentDirection, turn) {
 
 function moveForwards(plateau, initialPos, instructions) {
 
-    console.log("Mock call: ", plateau)
-
-    return plateau
-
 
     // Test: it recieves 3 arguments '5, 5', '1 2 N', 'LMLMLMLMM'
     

@@ -92,8 +92,8 @@ describe('Check rovers initial position', () => {
 
     // });
 
-    test('If initial position is valid, position is returned', () => {
-        expect(checkInitialPosition('1 2 N')).toBe('1 2 N');
+    test('If initial position is valid, position is returned as an array', () => {
+        expect(checkInitialPosition('1 2 N')).toBe([1, 2, 'N']);
         // expect(checkInitialPosition('1 5 E')).toBe('1 5 E');
         // expect(checkInitialPosition('5 5 W')).toBe('5 5 W');
         // expect(checkInitialPosition('0 0 S')).toBe('0 0 S');
@@ -175,22 +175,11 @@ describe('Rover changes direction', () => {
 // if       dir == W -> x - 1
 
 describe('Move Forwards function', () => {
-    // check it calls other function or receives current pos?
-    // do this when stripping out into modules
 
     move = require('./mars-rover').moveForwards;
     move = jest.fn();
 
-    // beforeEach(() => {
-    //     initializeCityDatabase();
-    //   });
-      
-    //   afterEach(() => {
-    //     clearCityDatabase();
-    //   });
-
-
-    it('should be called with plateau co-ordinates, rovers initial position and instructions as arguments', () => {
+    it('should be called with plateau co-ordinates, rovers initial position and instructions, as arguments', () => {
 
         const plateau = [5, 5]
         const initialPos = '1 2 N'
@@ -200,6 +189,10 @@ describe('Move Forwards function', () => {
 
         expect(move).toHaveBeenCalledTimes(1); // true
         expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);
+
+        // it throws error if not called with three arguments
+        // it calls ... functions
+        // it recieves ... outputs from said functions
     });
 
     // it('should be called with plateau and initial position arguments', () => {
