@@ -23,35 +23,34 @@ function checkPlateau(x, y) {
 
     plateau.push(x, y)
 
-    console.log("plateau size: ", plateau) // [5, 5]
+    // console.log("plateau size: ", plateau) // [5, 5]
     return plateau
 
 }
 
 function checkInitialPosition(initialPos) {
-    // if this is passed in as x, y, direction then fine
-    // if not will need logic to split out initialPos
-    // 1 2 N
-    // check this against plateau coordinates
 
     if (initialPos === undefined) {
         throw new Error("Error: rover must have initial position")
     }
 
-    if (initialPos.length < 5) {
+    const noEmptyStrings = initialPos.split(' ').filter(el => el !== "")
+    const initialPosToArr = noEmptyStrings.map(el => isNaN(Number(el)) ? el : Number(el))
+
+    if (initialPosToArr.length < 3) {
         throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
     }
-
+    
     const validDirection = ["N", "E", "S", "W"]
-    const direction = initialPos.charAt(initialPos.length - 1)
+    const direction = initialPosToArr[2]
     const match = validDirection.filter(letter => letter === direction)
+    
 
     if (match.length === 0) {
         throw new Error("Error: must have N, S, E or W direction");
     }
 
-    console.log("initial position: ", initialPos) // 1 2 N
-    return initialPos
+    return initialPosToArr
 
 }
 
@@ -68,13 +67,13 @@ function checkInstructions(instructions) {
         throw new Error("Error: instructions must be letters L, R or M")
     }
 
-    console.log("rover instructions: ", instructions.split('')) // LMLMLMLMM
+    // console.log("rover instructions: ", instructions.split('')) // LMLMLMLMM
     return instructions.split('')
 }
 
 function changeDirection(currentDirection, turn) {
 
-    console.log("Current Direction:", currentDirection)
+    // console.log("Current Direction:", currentDirection)
     let newDirection
 
     if (turn === "L") {
@@ -112,7 +111,7 @@ function changeDirection(currentDirection, turn) {
         }
     }
 
-    console.log("New Direction", newDirection)
+    // console.log("New Direction", newDirection)
     return newDirection
 }
 
