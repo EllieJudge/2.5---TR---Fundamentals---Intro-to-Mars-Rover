@@ -38,35 +38,9 @@ describe('Initial set-up', () => {
 // Action - call the method
 
 
-// The Plateau
-// The first line of input is the upper-right coordinates of the plateau 
-// - Check min, 0,0 
 
-describe('Check is a valid plateau', () => {
-    // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
-    // let minSize = 0; 
-    // let maxSize = 5; 
 
-    test('Check co-ordinates are not 0', () => {
-        expect(() => checkPlateau(0, 0)).toThrow("Error: x and y co-ordinates must be greater than 0");
-        expect(() => checkPlateau(0, 5)).toThrow("Error: x and y co-ordinates must be greater than 0");
-    });
-    test('Check co-ordinates are not less than 0', () => {
-        expect(() => checkPlateau(-1, -5)).toThrow("Error: x and y co-ordinates must be greater than 0");
-        expect(() => checkPlateau(-1, -0)).toThrow("Error: x and y co-ordinates must be greater than 0");
-    });
-    test('Check co-ordinates are integers', () => {
-        expect(() => checkPlateau(0.394, 3.91)).toThrow("Error: x and y co-ordinates must be integers");
-    });
-    test('Check co-ordinates are numbers', () => {
-        expect(() => checkPlateau("donkey", "melon")).toThrow("Error: x and y co-ordinates must be numbers");
-        expect(() => checkPlateau("0", "5")).toThrow("Error: x and y co-ordinates must be numbers");
-    });
-    const validPlateau = [5, 5];
-    it('returns co-ordinates if valid plateau co-ordinates have been received', () => {
-        expect(checkPlateau(5, 5)).toEqual(validPlateau);
-    });
-});
+
 
 // The Initial Position
 // An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North. 
@@ -91,6 +65,8 @@ describe('Check rovers initial position', () => {
     //     let roverInitialPos = '1 2 N'
 
     // });
+
+    // Add check for capital letters
 
     test('If initial position is valid, position is returned as an array', () => {
         expect(checkInitialPosition('1 2 N')).toEqual([1, 2, 'N']);
