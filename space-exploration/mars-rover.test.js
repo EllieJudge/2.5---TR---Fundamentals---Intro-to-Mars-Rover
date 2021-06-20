@@ -17,23 +17,6 @@ describe('Initial set-up', () => {
     });
 });
 
-// Test Input:
-// 1. Upper-right coordinate of the plateau: 5 5
-// (Lower-left coordinate assumed to be: 0 0)
-// 2. Rovers current position
-// 3. Rover instructions
-
-// Things to test / think about:
-
-// The Final Position
-// produces expected outputs
-// Not string or decimal
-// Has a direction
-// Is not off the side of the plateau floating in space
-
-// Check for Collisions
-// with other Rovers
-
 describe('Check rovers initial position', () => {
 
     test('Has initial position', () => {
@@ -122,20 +105,17 @@ describe('Rover changes direction', () => {
 });
 
 describe('Check for collisions', () => {
-    // it('It throws error if rover is about to collide with another rover', () => {
-    //     expect(checkForCollisions(rover, rovers)).toThrow("Error: path blocked by another rover!");
-    // });
 
-        it("does returns 'All clear' message if no rovers are on Mars", () => {
+    it("returns 'All clear' message if no rovers are on Mars", () => {
 
-            let rover1 = {
-                x: 1, 
-                y: 2, 
-                direction: 'N', 
-                plateau: [5, 5]
-            }
+        let rover1 = {
+            x: 1,
+            y: 2,
+            direction: 'N',
+            plateau: [5, 5]
+        }
 
-            let rovers1 = []
+        let rovers1 = []
 
         expect(checkForCollisions(rover1, rovers1)).toEqual("All clear");
     });
@@ -143,86 +123,86 @@ describe('Check for collisions', () => {
     it("checks rover isn't going to collide with another rover", () => {
 
         let rover2 = {
-            x: 1, 
-            y: 2, 
-            direction: 'N', 
+            x: 1,
+            y: 2,
+            direction: 'N',
             plateau: [5, 5]
         }
 
         let rovers2 = [
             {
-                x: 1, 
-                y: 2, 
-                direction: 'W', 
+                x: 1,
+                y: 2,
+                direction: 'W',
                 plateau: [5, 5]
             }
         ]
 
-    expect(() => checkForCollisions(rover2, rovers2)).toThrow("Error: collision with another rover ahead! Abort! Abort!");
+        expect(() => checkForCollisions(rover2, rovers2)).toThrow("Error: collision with another rover ahead! Abort! Abort!");
 
-    let rover3 = {
-        x: 1, 
-        y: 2, 
-        direction: 'N', 
-        plateau: [5, 5]
-    }
-
-    let rovers3 = [
-        {
-            x: 1, 
-            y: 1, 
-            direction: 'S', 
-            plateau: [5, 5]
-        },
-        {
-            x: 3, 
-            y: 3, 
-            direction: 'W', 
-            plateau: [5, 5]
-        },
-        {
-            x: 5, 
-            y: 2, 
-            direction: 'W', 
+        let rover3 = {
+            x: 1,
+            y: 2,
+            direction: 'N',
             plateau: [5, 5]
         }
-    ]
 
-    expect(checkForCollisions(rover3, rovers3)).toEqual("All clear");
+        let rovers3 = [
+            {
+                x: 1,
+                y: 1,
+                direction: 'S',
+                plateau: [5, 5]
+            },
+            {
+                x: 3,
+                y: 3,
+                direction: 'W',
+                plateau: [5, 5]
+            },
+            {
+                x: 5,
+                y: 2,
+                direction: 'W',
+                plateau: [5, 5]
+            }
+        ]
+
+        expect(checkForCollisions(rover3, rovers3)).toEqual("All clear");
 
 
-    let rover4 = {
-        x: 4, 
-        y: 5, 
-        direction: 'N', 
-        plateau: [5, 5]
-    }
-
-    let rovers4 = [
-        {
-            x: 1, 
-            y: 1, 
-            direction: 'S', 
-            plateau: [5, 5]
-        },
-        {
-            x: 3, 
-            y: 3, 
-            direction: 'W', 
-            plateau: [5, 5]
-        },
-        {
-            x: 4, 
-            y: 5, 
-            direction: 'W', 
+        let rover4 = {
+            x: 4,
+            y: 5,
+            direction: 'N',
             plateau: [5, 5]
         }
-    ]
 
-    expect(() => checkForCollisions(rover4, rovers4)).toThrow("Error: collision with another rover ahead! Abort! Abort!");
+        let rovers4 = [
+            {
+                x: 1,
+                y: 1,
+                direction: 'S',
+                plateau: [5, 5]
+            },
+            {
+                x: 3,
+                y: 3,
+                direction: 'W',
+                plateau: [5, 5]
+            },
+            {
+                x: 4,
+                y: 5,
+                direction: 'W',
+                plateau: [5, 5]
+            }
+        ]
+
+        expect(() => checkForCollisions(rover4, rovers4)).toThrow("Error: collision with another rover ahead! Abort! Abort!");
 
 
-});
+    });
 })
 
 
@@ -236,9 +216,9 @@ describe('Move Forwards function', () => {
     it('should be called with plateau co-ordinates, rovers initial position and instructions, as arguments', () => {
 
         const plateau = [5, 5]
-        const initialPos = [1, 2,'N']
+        const initialPos = [1, 2, 'N']
         const instructions = 'LMLMLMLMM'
-        
+
         move(plateau, initialPos, instructions)
         expect(move).toHaveBeenCalledTimes(1); // true
         expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);

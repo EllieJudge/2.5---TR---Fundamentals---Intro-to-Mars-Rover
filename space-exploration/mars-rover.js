@@ -12,8 +12,6 @@ function returnsSomething() {
 
 function checkInitialPosition(initialPos, plateau) {
 
-    // checkForCollisions(initialPos, rovers)
-
     if (initialPos === undefined) {
         throw new Error("Error: rover must have initial position")
     }
@@ -25,7 +23,7 @@ function checkInitialPosition(initialPos, plateau) {
         throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
     }
 
-    if(initialPosToArr[0] < 0 || initialPosToArr[0] > plateau[0] || initialPosToArr[1] < 0 || initialPosToArr[1] > plateau[1]) {
+    if (initialPosToArr[0] < 0 || initialPosToArr[0] > plateau[0] || initialPosToArr[1] < 0 || initialPosToArr[1] > plateau[1]) {
         throw new Error("Error: you've missed the plateau!")
     }
 
@@ -117,11 +115,13 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
     let rover = {
         // give rover uuid / name
-        x: initPos[0], 
-        y: initPos[1], 
-        direction: initPos[2], 
-        plateau: plat 
+        x: initPos[0],
+        y: initPos[1],
+        direction: initPos[2],
+        plateau: plat
     }
+
+    checkForCollisions(rover, rovers)
 
     directionsArr.forEach(move => {
 
@@ -131,35 +131,31 @@ function getFinalPosition(plateau, initialPos, instructions) {
         }
 
         if (move === "M") {
+            if (rover.direction === "W")
+                checkMoveIsSafe(rover)
+            rover.x -= 1
 
-            if (rover.direction === "W") 
+            if (rover.direction === "E")
                 checkMoveIsSafe(rover)
-                // check for collision
-                rover.x -= 1
-            
-            if (rover.direction === "E") 
-                checkMoveIsSafe(rover)
-                // check for collision
-                rover.x += 1
+            rover.x += 1
 
             if (rover.direction === "S")
                 checkMoveIsSafe(rover)
-                // check for collision
-                rover.y -= 1
-        
-            if (rover.direction === "N") 
+            rover.y -= 1
+
+            if (rover.direction === "N")
                 checkMoveIsSafe(rover)
-                // check for collision
-                rover.y += 1
-            }
+            rover.y += 1
         }
-    )
+    })
 
     rovers.push(rover)
     return rover;
 }
 
-getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
+getFinalPosition('5 5', '1 2 N', 'LMLMLMLMM')
+// getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
+
 
 
 

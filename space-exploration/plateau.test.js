@@ -6,9 +6,6 @@ const {
 
 
 describe('Check is a valid plateau', () => {
-    // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
-    // let minSize = 0; 
-    // let maxSize = 5; 
 
     test('Check co-ordinates are not 0', () => {
         expect(() => checkPlateau('0 0')).toThrow("Error: x and y co-ordinates must be greater than 0");
