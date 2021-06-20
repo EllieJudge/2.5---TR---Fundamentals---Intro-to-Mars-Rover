@@ -115,24 +115,23 @@ function moveForwards(plateau, initialPos, instructions) {
         }
 
         if (move === "M") {
+
             if (rover.direction === "W") 
-                // check move won't kill rover
-                // checkMoveIsSafe(rover, plateau) // rover.x - 1 < 0 throw error 
+                checkMoveIsSafe(rover) 
                 rover.x -= 1
             
             if (rover.direction === "E") 
-                // check move won't kill rover
+                checkMoveIsSafe(rover)
                 rover.x += 1
 
             if (rover.direction === "S")
-                // check move won't kill rover
+                checkMoveIsSafe(rover)
                 rover.y -= 1
         
             if (rover.direction === "N") 
-                // check move won't kill rover
+                checkMoveIsSafe(rover)
                 rover.y += 1
             }
-            
         }
     )
     

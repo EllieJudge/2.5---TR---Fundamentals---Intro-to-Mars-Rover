@@ -1,9 +1,9 @@
 function checkPlateau(plateau) {
 
-    let platArray = plateau.split(' ')
+    const platArray = plateau.split(' ')
 
-    let x = Number.parseInt(platArray[0])
-    let y = Number.parseInt(platArray[1])
+    const x = Number.parseInt(platArray[0])
+    const y = Number.parseInt(platArray[1])
 
 
     if (isNaN(x) || isNaN(y)) {
@@ -20,8 +20,8 @@ function checkPlateau(plateau) {
 
 function checkMoveIsSafe(rover) {
 
-    let plateauX = rover.plateau[0]
-    let plateauY = rover.plateau[1]
+    const plateauX = rover.plateau[0]
+    const plateauY = rover.plateau[1]
 
     if(rover.x - 1 < 0 || rover.y - 1 < 0) {
         throw new Error("Error: rover is about to fall off lower left edge of plateau")
