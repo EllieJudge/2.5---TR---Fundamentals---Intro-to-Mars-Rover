@@ -12,6 +12,8 @@ function returnsSomething() {
 
 function checkInitialPosition(initialPos, plateau) {
 
+    // checkForCollisions(initialPos, rovers)
+
     if (initialPos === undefined) {
         throw new Error("Error: rover must have initial position")
     }

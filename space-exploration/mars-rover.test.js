@@ -128,7 +128,7 @@ describe('Check for collisions', () => {
 
         it("does returns 'All clear' message if no rovers are on Mars", () => {
 
-            let rover = {
+            let rover1 = {
                 x: 1, 
                 y: 2, 
                 direction: 'N', 
@@ -137,8 +137,29 @@ describe('Check for collisions', () => {
 
             let rovers = []
 
-        expect(checkForCollisions(rover, rovers)).toEqual("All clear");
+        expect(checkForCollisions(rover1, rovers)).toEqual("All clear");
     });
+
+    it("checks rover isn't going to collide with another rover", () => {
+
+        let rover2 = {
+            x: 1, 
+            y: 2, 
+            direction: 'N', 
+            plateau: [5, 5]
+        }
+
+        let rovers = [
+            {
+                x: 1, 
+                y: 2, 
+                direction: 'W', 
+                plateau: [5, 5]
+            }
+        ]
+
+    expect(() => checkForCollisions(rover2, rovers)).toThrow("Error: collision with another rover ahead! Abort! Abort!");
+});
 })
 
 
