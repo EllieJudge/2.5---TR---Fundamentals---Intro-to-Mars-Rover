@@ -97,7 +97,7 @@ function changeDirection(currentDirection, turn) {
 }
 
 function checkForCollisions(rover, rovers) {
-
+    return "All clear"
 }
 
 function getFinalPosition(plateau, initialPos, instructions) {
