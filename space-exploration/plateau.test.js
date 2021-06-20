@@ -34,7 +34,7 @@ describe('Check move is safe', () => {
     }
 
     test('If move sends rover off plateau edge, throw error', () => {
-        expect(() => checkMoveIsSafe(rover)).toThrow("Error: rover is about to fall off lower left edge of plateau");
+        expect(() => checkMoveIsSafe(rover)).toThrow("Error: rover is about to fall off left edge of plateau");
     });
 
     const rover2 = {
@@ -45,7 +45,7 @@ describe('Check move is safe', () => {
     }
 
     test('If move sends rover off plateau edge, throw error', () => {
-        expect(() => checkMoveIsSafe(rover2)).toThrow("Error: rover is about to fall off upper right edge of plateau");
+        expect(() => checkMoveIsSafe(rover2)).toThrow("Error: rover is about to fall off right edge of plateau");
     });
 
     const rover3 = {
