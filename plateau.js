@@ -30,7 +30,7 @@ function checkMoveIsSafe(rover) {
         throw new Error("Error: rover is about to fall off upper right edge of plateau")
     }
     
-
+    return "Safe"
 
 }
 
