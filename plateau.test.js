@@ -1,10 +1,9 @@
 const {
-    checkPlateau
+    checkPlateau,
+    checkMoveIsSafe
 } = require("./plateau");
 
-// The Plateau
-// The first line of input is the upper-right coordinates of the plateau 
-// - Check min, 0,0 
+
 
 describe('Check is a valid plateau', () => {
     // refactor by adding min and max variables (incase future rovers can go underneath or down the side of plateaus)?
@@ -23,7 +22,21 @@ describe('Check is a valid plateau', () => {
         expect(() => checkPlateau("donkey melon")).toThrow("Error: x and y co-ordinates must be numbers");
     });
     const validPlateau = '5 5';
-    it('returns co-ordinates if valid plateau co-ordinates have been received', () => {
+    it('returns co-ordinates as an array if valid plateau co-ordinates have been received', () => {
         expect(checkPlateau(validPlateau)).toEqual([5, 5]);
+    });
+});
+
+describe('Check move is safe', () => {
+
+    let rover = {
+        x: 0,
+        y: 0, 
+        direction: 'W', 
+        plateau: [5, 5]
+    }
+
+    test('If move sends rover off plateau edge, throw error', () => {
+        expect(() => checkMoveIsSafe(rover)).toThrow("Error: rover is about to fall off edge of plateau");
     });
 });

@@ -1,6 +1,7 @@
 
 const {
     checkPlateau,
+    checkMoveIsSafe
 } = require("./plateau");
 
 function returnsSomething() {
@@ -115,21 +116,23 @@ function moveForwards(plateau, initialPos, instructions) {
 
         if (move === "M") {
             if (rover.direction === "W") 
+                // check move won't kill rover
+                // checkMoveIsSafe(rover, plateau) // rover.x - 1 < 0 throw error 
                 rover.x -= 1
-                // check new position is still on plateau
             
             if (rover.direction === "E") 
+                // check move won't kill rover
                 rover.x += 1
-                // check new position is still on plateau
 
             if (rover.direction === "S")
+                // check move won't kill rover
                 rover.y -= 1
-                // check new position is still on plateau
         
             if (rover.direction === "N") 
+                // check move won't kill rover
                 rover.y += 1
-                // check new position is still on plateau
             }
+            
         }
     )
     

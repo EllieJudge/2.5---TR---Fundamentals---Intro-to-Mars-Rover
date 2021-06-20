@@ -18,8 +18,13 @@ function checkPlateau(plateau) {
 }
 
 
+function checkMoveIsSafe(rover) {
 
+
+
+}
 
 module.exports = {
-    checkPlateau
+    checkPlateau,
+    checkMoveIsSafe
 };
