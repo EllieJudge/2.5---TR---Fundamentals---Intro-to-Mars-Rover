@@ -15,7 +15,9 @@ function checkInitialPosition(initialPos, plateau) {
     }
 
     const noEmptyStrings = initialPos.split(' ').filter(el => el !== "")
-    const initialPosToArr = noEmptyStrings.map(el => isNaN(Number(el)) ? el : Number(el))
+    const initialPosToArr = noEmptyStrings.map(el => isNaN(Number(el)) ? el.toUpperCase() : Number(el))
+
+    console.log("Init pos to arr", initialPosToArr)
 
     if (initialPosToArr.length < 3) {
         throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
