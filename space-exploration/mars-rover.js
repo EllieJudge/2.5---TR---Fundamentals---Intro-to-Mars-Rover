@@ -106,7 +106,6 @@ function checkForCollisions(rover, rovers) {
         }
     })
 
-
     return "All clear"
 }
 
