@@ -52,7 +52,7 @@ describe('Check rovers initial position', () => {
         expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
     });
 
-    let plateau = [5, 5]
+    const plateau = [5, 5]
 
     test('Throws error if initial position is not valid', () => {
         expect(() => checkInitialPosition('1 2 X', plateau)).toThrow("Error: must have N, S, E or W direction");
@@ -62,15 +62,17 @@ describe('Check rovers initial position', () => {
     });
 
     test('Throws error if initial position is not on the plateau', () => {
-        
-        let initialPos = '9 6 N'
-        let plateau = [5, 5]
-
-        expect(() => checkInitialPosition(initialPos, plateau)).toThrow("Error: you've missed the plateau!");
-
+        expect(() => checkInitialPosition('9 6 N', plateau)).toThrow("Error: you've missed the plateau!");
+        expect(() => checkInitialPosition('1 7 W', plateau)).toThrow("Error: you've missed the plateau!");
+        expect(() => checkInitialPosition('9 0 S', plateau)).toThrow("Error: you've missed the plateau!");
+        expect(() => checkInitialPosition('7 6 N', [6, 6])).toThrow("Error: you've missed the plateau!");
+        expect(() => checkInitialPosition('3 14 N', [3, 13])).toThrow("Error: you've missed the plateau!");
+        expect(() => checkInitialPosition('4 13 N', [3, 13])).toThrow("Error: you've missed the plateau!");
     });
 
-    // Add check for capital letters
+    test('It returns correct position even if direction passed is lowercase', () => {
+        expect(checkInitialPosition('1 2 n', plateau)).toEqual([1, 2, 'N']);
+    });
 
     test('If initial position is valid, position is returned as an array', () => {
         expect(checkInitialPosition('1 2 N', plateau)).toEqual([1, 2, 'N']);
