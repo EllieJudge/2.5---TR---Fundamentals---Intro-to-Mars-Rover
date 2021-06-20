@@ -8,7 +8,7 @@ function returnsSomething() {
     return true
 }
 
-function checkInitialPosition(initialPos) {
+function checkInitialPosition(initialPos, plateau) {
 
     if (initialPos === undefined) {
         throw new Error("Error: rover must have initial position")
@@ -95,7 +95,7 @@ function changeDirection(currentDirection, turn) {
 function getFinalPosition(plateau, initialPos, instructions) {
 
     const plat = checkPlateau(plateau)
-    const initPos = checkInitialPosition(initialPos)
+    const initPos = checkInitialPosition(initialPos, plat)
     const directionsArr = checkInstructions(instructions)
 
     let rover = {
@@ -104,6 +104,8 @@ function getFinalPosition(plateau, initialPos, instructions) {
         direction: initPos[2], 
         plateau: plat 
     }
+
+    console.log("Rover: ", rover)
 
     directionsArr.forEach(move => {
 

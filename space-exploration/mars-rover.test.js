@@ -59,11 +59,14 @@ describe('Check rovers initial position', () => {
         expect(() => checkInitialPosition('N')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
     });
 
-    // test('Throws error if initial position is not on the plateau', () => {
-    //     let plateauSize = '5 5'
-    //     let roverInitialPos = '1 2 N'
+    test('Throws error if initial position is not on the plateau', () => {
+        
+        let initialPos = '9 6 N'
+        let plateau = [5, 5]
 
-    // });
+        expect(() => checkInitialPosition(initialPos, plateau)).toThrow("Error: you've missed the plateau!");
+
+    });
 
     // Add check for capital letters
 
@@ -74,13 +77,6 @@ describe('Check rovers initial position', () => {
         expect(checkInitialPosition('0 1 S')).toEqual([0, 1, 'S']);
     });
 });
-
-// The Direction/s && Instructions
-// Each rover has two lines of input - check has 2 and not null
-// The first line gives the rover's position - check it has a position / this is valid 
-// second line is a series of instructions
-// The possible letters are 'L', 'R' and 'M'. 
-// 'M' means move forward one grid point - and maintain the same heading.
 
 describe('Check instructions', () => {
 
@@ -105,15 +101,6 @@ describe('Check instructions', () => {
     });
 });
 
-// Change direction
-// If L or R
-// turn(N (initialPos[2]))
-// switch (L or R)
-// N -> returns (L) W or (R) E
-// E -> returns N or S
-// S -> returns E or W
-// W -> returns S or N
-
 describe('Rover changes direction', () => {
 
     const initialDirection = 'N'
@@ -137,18 +124,6 @@ describe('Rover changes direction', () => {
 
 });
 
-// Move forward
-
-// gets current position '1 2 N'
-// x = 1
-// y = 2
-// directon = N
-
-// if direction == N -> y + 1
-// if direction == E -> x + 1
-// if       dir == S -> y - 1
-// if       dir == W -> x - 1
-
 describe('Move Forwards function', () => {
 
     // this seems wrong ?? 
@@ -166,16 +141,6 @@ describe('Move Forwards function', () => {
         expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);
 
     });
-
-    // it('should call checkPlateau function', () => {
-        
-    //     const childFunction = jest.fn();
-        
-    //     move = () => childFunction();
-    //     move();
-    //     expect(childFunction).toHaveBeenCalled();
-    // });
-
 
 });
 
