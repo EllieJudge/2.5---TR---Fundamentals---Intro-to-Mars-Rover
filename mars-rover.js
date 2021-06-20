@@ -96,8 +96,8 @@ function moveForwards(plateau, initialPos, instructions) {
 
     // hard coding these for now but will eventually pass in above args
     let plat = checkPlateau(5, 5)
-    let initPos = checkInitialPosition('1 2 N')
-    let directionsArr = checkInstructions('LMLMLMLMM')
+    let initPos = checkInitialPosition('3 3 E')
+    let directionsArr = checkInstructions('MMRMMRMRRM')
 
     console.log("DIREC ARR: ", directionsArr)
 
