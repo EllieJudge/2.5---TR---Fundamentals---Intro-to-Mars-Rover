@@ -95,49 +95,45 @@ function changeDirection(currentDirection, turn) {
 function moveForwards(plateau, initialPos, instructions) {
 
     // hard coding these for now but will eventually pass in above args
-    let plat = checkPlateau(5, 5)
+    let plat = checkPlateau('5 5')
     let initPos = checkInitialPosition('3 3 E')
     let directionsArr = checkInstructions('MMRMMRMRRM')
 
-    console.log("DIREC ARR: ", directionsArr)
-
     let rover = {
-        x: initPos[0], // initPosArr [0] 
-        y: initPos[1], // initPosArr [1]
-        direction: initPos[2], // initPosArr [2] W S E N
-        plateau: plat
+        x: initPos[0], 
+        y: initPos[1], 
+        direction: initPos[2], 
+        plateau: plat // [5, 5]
     }
-
-    // let directions = 'LMLMLMLMM' checkInstructions
-    // let directionsArr = ['L|','M|','L|','M|','L|','|M','L|','M|','M']
-    // Goal: 1 3 N
 
     directionsArr.forEach(move => {
 
         if (move === "L" || move === "R") {
             let newDirection = changeDirection(rover.direction, move)
             rover.direction = newDirection
-
-            console.log("NEW DIRECTION HERE: ", newDirection)
-            console.log("Updated Rover: ", rover)
         }
 
         if (move === "M") {
             if (rover.direction === "W") 
                 rover.x -= 1
+                // check new position is still on plateau
             
             if (rover.direction === "E") 
                 rover.x += 1
+                // check new position is still on plateau
 
             if (rover.direction === "S")
                 rover.y -= 1
+                // check new position is still on plateau
         
             if (rover.direction === "N") 
                 rover.y += 1
+                // check new position is still on plateau
             }
         }
     )
-    console.log("Hiya updated rover: ", rover)
+    
+    return rover;
 }
 
 moveForwards()
@@ -150,5 +146,4 @@ module.exports = {
     checkInstructions,
     changeDirection,
     moveForwards
-
 };
