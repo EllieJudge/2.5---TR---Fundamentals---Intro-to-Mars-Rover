@@ -89,35 +89,33 @@ function changeDirection(currentDirection, turn) {
         }
     }
 
-    // console.log("New Direction", newDirection)
     return newDirection
 }
 
-function moveForwards(plateau, initialPos, instructions) {
+function getFinalPosition(plateau, initialPos, instructions) {
 
-    // hard coding these for now but will eventually pass in above args
-    let plat = checkPlateau('5 5')
-    let initPos = checkInitialPosition('3 3 E')
-    let directionsArr = checkInstructions('MMRMMRMRRM')
+    const plat = checkPlateau(plateau)
+    const initPos = checkInitialPosition(initialPos)
+    const directionsArr = checkInstructions(instructions)
 
     let rover = {
         x: initPos[0], 
         y: initPos[1], 
         direction: initPos[2], 
-        plateau: plat // [5, 5]
+        plateau: plat 
     }
 
     directionsArr.forEach(move => {
 
         if (move === "L" || move === "R") {
-            let newDirection = changeDirection(rover.direction, move)
+            const newDirection = changeDirection(rover.direction, move)
             rover.direction = newDirection
         }
 
         if (move === "M") {
 
             if (rover.direction === "W") 
-                checkMoveIsSafe(rover) 
+                checkMoveIsSafe(rover)
                 rover.x -= 1
             
             if (rover.direction === "E") 
@@ -138,7 +136,7 @@ function moveForwards(plateau, initialPos, instructions) {
     return rover;
 }
 
-moveForwards()
+getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
 
 
 
@@ -147,5 +145,5 @@ module.exports = {
     checkInitialPosition,
     checkInstructions,
     changeDirection,
-    moveForwards
+    getFinalPosition
 };

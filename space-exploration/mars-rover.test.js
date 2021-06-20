@@ -3,7 +3,7 @@ const {
     checkInitialPosition,
     checkInstructions,
     changeDirection,
-    moveForwards
+    getFinalPosition
 } = require("./mars-rover");
 
 describe('Initial set-up', () => {
@@ -152,7 +152,7 @@ describe('Rover changes direction', () => {
 describe('Move Forwards function', () => {
 
     // this seems wrong ?? 
-    move = require('./mars-rover').moveForwards;
+    move = require('./mars-rover').getFinalPosition;
     move = jest.fn();
 
     it('should be called with plateau co-ordinates, rovers initial position and instructions, as arguments', () => {

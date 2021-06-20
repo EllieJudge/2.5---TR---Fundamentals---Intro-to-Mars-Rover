@@ -26,12 +26,11 @@ function checkMoveIsSafe(rover) {
     if(rover.x - 1 < 0 || rover.y - 1 < 0) {
         throw new Error("Error: rover is about to fall off lower left edge of plateau")
     }
-    if(rover.x + 1 > plateauX || rover.y > plateauY) {
+    if(rover.x + 1 > plateauX || rover.y + 1 > plateauY) {
         throw new Error("Error: rover is about to fall off upper right edge of plateau")
     }
     
     return "Safe"
-
 }
 
 module.exports = {
