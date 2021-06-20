@@ -23,13 +23,9 @@ function checkMoveIsSafe(rover) {
     let plateauX = rover.plateau[0]
     let plateauY = rover.plateau[1]
 
-    if(rover.x - 1 < plateauX) {
+    if(rover.x - 1 < 0 || rover.y - 1 < 0) {
         throw new Error("Error: rover is about to fall off edge of plateau")
     }
-    if(rover.y - 1 < plateauY) {
-        throw new Error("Error: rover is about to fall off edge of plateau")
-    }
-
 
 }
 
