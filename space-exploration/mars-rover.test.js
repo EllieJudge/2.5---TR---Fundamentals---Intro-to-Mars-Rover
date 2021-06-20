@@ -52,11 +52,13 @@ describe('Check rovers initial position', () => {
         expect(() => checkInitialPosition()).toThrow("Error: rover must have initial position");
     });
 
+    let plateau = [5, 5]
+
     test('Throws error if initial position is not valid', () => {
-        expect(() => checkInitialPosition('1 2 X')).toThrow("Error: must have N, S, E or W direction");
-        expect(() => checkInitialPosition('1 2 Peanuts')).toThrow("Error: must have N, S, E or W direction");
-        expect(() => checkInitialPosition('1 2 ')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
-        expect(() => checkInitialPosition('N')).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
+        expect(() => checkInitialPosition('1 2 X', plateau)).toThrow("Error: must have N, S, E or W direction");
+        expect(() => checkInitialPosition('1 2 Peanuts', plateau)).toThrow("Error: must have N, S, E or W direction");
+        expect(() => checkInitialPosition('1 2 ', plateau)).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
+        expect(() => checkInitialPosition('N', plateau)).toThrow("Error: must have x co-ordinates, y co-ordinates and direction");
     });
 
     test('Throws error if initial position is not on the plateau', () => {
@@ -71,10 +73,10 @@ describe('Check rovers initial position', () => {
     // Add check for capital letters
 
     test('If initial position is valid, position is returned as an array', () => {
-        expect(checkInitialPosition('1 2 N')).toEqual([1, 2, 'N']);
-        expect(checkInitialPosition('1 5 E')).toEqual([1, 5, 'E']);
-        expect(checkInitialPosition('5 5 W')).toEqual([5, 5, 'W']);
-        expect(checkInitialPosition('0 1 S')).toEqual([0, 1, 'S']);
+        expect(checkInitialPosition('1 2 N', plateau)).toEqual([1, 2, 'N']);
+        expect(checkInitialPosition('1 5 E', plateau)).toEqual([1, 5, 'E']);
+        expect(checkInitialPosition('5 5 W', plateau)).toEqual([5, 5, 'W']);
+        expect(checkInitialPosition('0 1 S', plateau)).toEqual([0, 1, 'S']);
     });
 });
 
