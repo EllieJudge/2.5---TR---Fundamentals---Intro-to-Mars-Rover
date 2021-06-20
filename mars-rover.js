@@ -1,7 +1,10 @@
+
+const {
+    checkPlateau,
+} = require("./plateau");
+
 function returnsSomething() {
-
     return true
-
 }
 
 function checkInitialPosition(initialPos) {
@@ -16,11 +19,11 @@ function checkInitialPosition(initialPos) {
     if (initialPosToArr.length < 3) {
         throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
     }
-    
+
     const validDirection = ["N", "E", "S", "W"]
     const direction = initialPosToArr[2]
     const match = validDirection.filter(letter => letter === direction)
-    
+
 
     if (match.length === 0) {
         throw new Error("Error: must have N, S, E or W direction");
@@ -43,13 +46,11 @@ function checkInstructions(instructions) {
         throw new Error("Error: instructions must be letters L, R or M")
     }
 
-    // console.log("rover instructions: ", instructions.split('')) // LMLMLMLMM
-    return instructions.split('')
+    return instructions.split('') // ['L', 'M', 'L','M', 'L', 'M','L', 'M', 'M']
 }
 
 function changeDirection(currentDirection, turn) {
 
-    // console.log("Current Direction:", currentDirection)
     let newDirection
 
     if (turn === "L") {
@@ -93,56 +94,53 @@ function changeDirection(currentDirection, turn) {
 
 function moveForwards(plateau, initialPos, instructions) {
 
+    // hard coding these for now but will eventually pass in above args
+    let plat = checkPlateau(5, 5)
+    let initPos = checkInitialPosition('1 2 N')
+    let directionsArr = checkInstructions('LMLMLMLMM')
 
-    // Test: it recieves 3 arguments '5, 5', '1 2 N', 'LMLMLMLMM'
-    
-    // call checkPlateau -> [5, 5]
-    // call checkInitialPos -> '1 2 N'
-    // set rover object?
+    console.log("DIREC ARR: ", directionsArr)
 
-// let initPos = '1 2 N'
+    let rover = {
+        x: initPos[0], // initPosArr [0] 
+        y: initPos[1], // initPosArr [1]
+        direction: initPos[2], // initPosArr [2] W S E N
+        plateau: plat
+    }
 
-// split
+    // let directions = 'LMLMLMLMM' checkInstructions
+    // let directionsArr = ['L|','M|','L|','M|','L|','|M','L|','M|','M']
+    // Goal: 1 3 N
 
-// let initPosArray = [1, 2, "N"]
+    directionsArr.forEach(move => {
 
-// let rover = {
-//     direction: "N", // initPosArr [2] W S E N
-//     x: 1, // initPosArr [0] 0 
-//     y: 2 // initPosArr [1]
-// }
+        if (move === "L" || move === "R") {
+            let newDirection = changeDirection(rover.direction, move)
+            rover.direction = newDirection
 
-// let directions = 'LMLMLMLMM'
+            console.log("NEW DIRECTION HERE: ", newDirection)
+            console.log("Updated Rover: ", rover)
+        }
 
-// let directionsArr = ['L|','M|','L|','M|','L|','|M','L|','M|','M']
+        if (move === "M") {
+            if (rover.direction === "W") 
+                rover.x -= 1
+            
+            if (rover.direction === "E") 
+                rover.x += 1
 
-// Goal: 1 3 N
-
-// directionsArr.forEach(move => {
-
-    // if (move === "L" || move == "R") {
-        // call getNewDirectionFunction (rover.Direction, move)
-            // let newDir = will return -> currentDirection with new direction i.e '1 2 W' S
-            // rover.direction === newDir.split(' ')[2]
-    // }
-    // if (move === "M") {
-        // if (rover.direction === "W") {
-            //rover.x - 1
-        // IF (rover.direction === "E")
-            // rover.x + 1
-        // else if (rover.direction === "S")
-            // rover.y - 1
-        // else if (rover.direction === "N") {
-            // rover.y + 1
-        // }
-        // }
-    // }
-
-// )
-
+            if (rover.direction === "S")
+                rover.y -= 1
+        
+            if (rover.direction === "N") 
+                rover.y += 1
+            }
+        }
+    )
+    console.log("Hiya updated rover: ", rover)
 }
 
-// moveForwards()
+moveForwards()
 
 
 

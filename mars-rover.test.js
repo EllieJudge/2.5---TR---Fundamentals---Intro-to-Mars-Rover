@@ -1,6 +1,5 @@
 const {
     returnsSomething,
-    checkPlateau,
     checkInitialPosition,
     checkInstructions,
     changeDirection,
@@ -152,43 +151,31 @@ describe('Rover changes direction', () => {
 
 describe('Move Forwards function', () => {
 
+    // this seems wrong ?? 
     move = require('./mars-rover').moveForwards;
     move = jest.fn();
 
     it('should be called with plateau co-ordinates, rovers initial position and instructions, as arguments', () => {
 
         const plateau = [5, 5]
-        const initialPos = '1 2 N'
+        const initialPos = [1, 2,'N']
         const instructions = 'LMLMLMLMM'
         
         move(plateau, initialPos, instructions)
-
         expect(move).toHaveBeenCalledTimes(1); // true
         expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);
 
-        // it throws error if not called with three arguments
-        // it calls ... functions
-        // it recieves ... outputs from said functions
     });
 
-    // it('should be called with plateau and initial position arguments', () => {
-    //     // expect(main(1)).toBe(2);
-
-    //     const plateau = [5, 5]
-    //     let initialPos = '1 2 n'
-    //     move(plateau)
-
-    //     expect(move).toHaveBeenCalledTimes(1); // true
-    //     expect(move).toHaveBeenCalledWith(plateau);
-    //     expect(move).toHaveBeenCalledWith(plateau, initialPos);
+    // it('should call checkPlateau function', () => {
+        
+    //     const childFunction = jest.fn();
+        
+    //     move = () => childFunction();
+    //     move();
+    //     expect(childFunction).toHaveBeenCalled();
     // });
 
-    // it('should add one and call child Fn', () => {
-    //     expect(main(2)).toBe(3);
-
-    //     expect(child).toHaveBeenCalledWith(4);
-    //     expect(child).toHaveBeenCalledTimes(1);
-    // });
 
 });
 
