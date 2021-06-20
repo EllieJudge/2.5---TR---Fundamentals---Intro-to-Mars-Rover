@@ -3,7 +3,9 @@ const {
     checkInitialPosition,
     checkInstructions,
     changeDirection,
-    getFinalPosition
+    getFinalPosition,
+    checkForCollisions
+
 } = require("./mars-rover");
 
 describe('Initial set-up', () => {
@@ -32,20 +34,6 @@ describe('Initial set-up', () => {
 // Check for Collisions
 // with other Rovers
 
-// Arrange - set up ingredients to create test 
-// Assertion - what you are checking for? Expected result vs actual result
-// Action - call the method
-
-
-
-
-
-
-// The Initial Position
-// An example position might be 0, 0, N, which means the rover is in the bottom left corner and facing North. 
-// Assume that the square directly North from (x, y) is (x, y+1)
-// The position is made up of two integers - check integers (not string or decimal)
-
 describe('Check rovers initial position', () => {
 
     test('Has initial position', () => {
@@ -70,8 +58,12 @@ describe('Check rovers initial position', () => {
         expect(() => checkInitialPosition('4 13 N', [3, 13])).toThrow("Error: you've missed the plateau!");
     });
 
+    // Throws error if rover has landed on another rover (checkForCollisions)
+
     test('It returns correct position even if direction passed is lowercase', () => {
         expect(checkInitialPosition('1 2 n', plateau)).toEqual([1, 2, 'N']);
+        expect(checkInitialPosition('2 2 s', plateau)).toEqual([2, 2, 'S']);
+        expect(checkInitialPosition('5 2 w', plateau)).toEqual([5, 2, 'W']);
     });
 
     test('If initial position is valid, position is returned as an array', () => {
@@ -80,6 +72,7 @@ describe('Check rovers initial position', () => {
         expect(checkInitialPosition('5 5 W', plateau)).toEqual([5, 5, 'W']);
         expect(checkInitialPosition('0 1 S', plateau)).toEqual([0, 1, 'S']);
     });
+
 });
 
 describe('Check instructions', () => {
@@ -128,6 +121,28 @@ describe('Rover changes direction', () => {
 
 });
 
+describe('Check for collisions', () => {
+    // it('It throws error if rover is about to collide with another rover', () => {
+    //     expect(checkForCollisions(rover, rovers)).toThrow("Error: path blocked by another rover!");
+    // });
+
+        it("does returns 'All clear' message if no rovers are on Mars", () => {
+
+            let rover = {
+                x: 1, 
+                y: 2, 
+                direction: 'N', 
+                plateau: [5, 5]
+            }
+
+            let rovers = []
+
+        expect(checkForCollisions(rover, rovers)).toEqual("All clear");
+    });
+})
+
+
+//Not happy delete if necessary
 describe('Move Forwards function', () => {
 
     // this seems wrong ?? 

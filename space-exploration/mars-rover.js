@@ -4,6 +4,8 @@ const {
     checkMoveIsSafe
 } = require("./plateau");
 
+let rovers = []
+
 function returnsSomething() {
     return true
 }
@@ -16,8 +18,6 @@ function checkInitialPosition(initialPos, plateau) {
 
     const noEmptyStrings = initialPos.split(' ').filter(el => el !== "")
     const initialPosToArr = noEmptyStrings.map(el => isNaN(Number(el)) ? el.toUpperCase() : Number(el))
-
-    console.log("Init pos to arr", initialPosToArr)
 
     if (initialPosToArr.length < 3) {
         throw new Error("Error: must have x co-ordinates, y co-ordinates and direction");
@@ -96,6 +96,10 @@ function changeDirection(currentDirection, turn) {
     return newDirection
 }
 
+function checkForCollisions(rover, rovers) {
+
+}
+
 function getFinalPosition(plateau, initialPos, instructions) {
 
     const plat = checkPlateau(plateau)
@@ -103,13 +107,12 @@ function getFinalPosition(plateau, initialPos, instructions) {
     const directionsArr = checkInstructions(instructions)
 
     let rover = {
+        // give rover uuid / name
         x: initPos[0], 
         y: initPos[1], 
         direction: initPos[2], 
         plateau: plat 
     }
-
-    console.log("Rover: ", rover)
 
     directionsArr.forEach(move => {
 
@@ -122,23 +125,28 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
             if (rover.direction === "W") 
                 checkMoveIsSafe(rover)
+                // check for collision
                 rover.x -= 1
             
             if (rover.direction === "E") 
                 checkMoveIsSafe(rover)
+                // check for collision
                 rover.x += 1
 
             if (rover.direction === "S")
                 checkMoveIsSafe(rover)
+                // check for collision
                 rover.y -= 1
         
             if (rover.direction === "N") 
                 checkMoveIsSafe(rover)
+                // check for collision
                 rover.y += 1
             }
         }
     )
-    
+
+    rovers.push(rover)
     return rover;
 }
 
@@ -150,6 +158,7 @@ module.exports = {
     returnsSomething,
     checkInitialPosition,
     checkInstructions,
+    checkForCollisions,
     changeDirection,
     getFinalPosition
 };
