@@ -1,12 +1,16 @@
 const {
     returnsSomething,
-    checkInitialPosition,
+    // checkInitialPosition,
     checkInstructions,
     changeDirection,
     getFinalPosition,
     checkForCollisions
 
 } = require("./mars-rover");
+
+const {
+    checkInitialPosition
+} = require("./modules")
 
 describe('Initial set-up', () => {
     test('Jest is working', () => {

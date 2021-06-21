@@ -26,6 +26,4 @@ function checkInitialPosition(initialPos, plateau) {
     return initialPosToArr
 }
 
-module.exports = {
-    checkInitialPosition
-};
+module.exports = checkInitialPosition;

@@ -4,10 +4,8 @@ const {
     checkMoveIsSafe
 } = require("./plateau");
 
-var modules = require('./modules.js');
-// modules.one.foo();
-// modules.two.bar();
-// modules.checkInitialPosition.checkInitialPosition();
+let modules = require('./modules.js');
+
 
 let rovers = []
 
@@ -89,7 +87,10 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
     const plat = checkPlateau(plateau)
     // const initPos = checkInitialPosition(initialPos, plat)
-    const initPos = modules.checkInitialPosition.checkInitialPosition(initialPos, plat);
+
+    const initPos = modules.checkInitialPosition(initialPos, plat);
+
+
     const directionsArr = checkInstructions(instructions)
 
     let rover = {
