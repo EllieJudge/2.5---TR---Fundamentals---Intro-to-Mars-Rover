@@ -6,8 +6,6 @@ function moveForwards(rover) {
             if (rover.direction === "W")
             rover.x -= 1
 
-            console.log("move forwards called")
-
             return rover
 
             // if (rover.direction === "E")
