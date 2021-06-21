@@ -34,6 +34,7 @@ function checkMoveIsSafe(rover) {
     return "Safe"
 }
 
+
 module.exports = {
     checkPlateau,
     checkMoveIsSafe
