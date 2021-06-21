@@ -1,10 +1,4 @@
-const {
-    // returnsSomething,
-    // checkInstructions,
-    changeDirection,
-    // checkForCollisions
-
-} = require("./mars-rover");
+const { changeDirection } = require("./mars-rover");
 
 
 describe('Rover changes direction', () => {
@@ -21,7 +15,6 @@ describe('Rover changes direction', () => {
 
     const initialPositions = ['N', 'E', 'S', 'W', 'N', 'E', 'S', 'W',]
     const newPositions = ['W', 'N', 'E', 'S', 'E', 'S', 'W', 'N']
-
     const lOrR = ['L', 'L', 'L', 'L', 'R', 'R', 'R', 'R']
 
     initialPositions.forEach((position, index) => {

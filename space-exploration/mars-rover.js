@@ -1,10 +1,11 @@
 
 const modules = require('./modules.js');
+const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
 
-let rovers = []
+const rovers = []
 
-function returnsSomething() {
-    return true
+function getRoverName() {
+    return uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] }); 
 }
 
 function changeDirection(currentDirection, turn) {
@@ -56,7 +57,6 @@ function getFinalPosition(plateau, initialPos, instructions) {
     const directionsArr = modules.checkInstructions(instructions)
 
     let rover = {
-        // give rover uuid / name
         x: initPos[0],
         y: initPos[1],
         direction: initPos[2],
@@ -92,20 +92,19 @@ function getFinalPosition(plateau, initialPos, instructions) {
     })
 
     rovers.push(rover)
+    rovers.forEach(rover => rover.name = getRoverName())
     return rover;
 }
 
 getFinalPosition('5 5', '1 2 N', 'LMLMLMLMM')
 getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
 
+console.log('Rovers: ', rovers)
+
 
 
 
 module.exports = {
-    returnsSomething,
-    // checkInitialPosition,
-    // checkInstructions,
-    // checkForCollisions,
     changeDirection,
     getFinalPosition
 };
