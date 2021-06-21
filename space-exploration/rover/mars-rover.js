@@ -3,48 +3,6 @@ const modules = require('../modules');
 
 const rovers = []
 
-function changeDirection(currentDirection, turn) {
-
-    let newDirection
-
-    if (turn === "L") {
-        switch (currentDirection) {
-            case "N":
-                newDirection = "W"
-                break;
-            case "E":
-                newDirection = "N"
-                break;
-            case "S":
-                newDirection = "E"
-                break;
-            case "W":
-                newDirection = "S"
-                break;
-            default:
-        }
-    }
-    else if (turn === "R") {
-        switch (currentDirection) {
-            case "N":
-                newDirection = "E"
-                break;
-            case "E":
-                newDirection = "S"
-                break;
-            case "S":
-                newDirection = "W"
-                break;
-            case "W":
-                newDirection = "N"
-                break;
-            default:
-        }
-    }
-
-    return newDirection
-}
-
 function getFinalPosition(plateau, initialPos, instructions) {
 
     const plat = modules.createPlateau(plateau)
@@ -63,7 +21,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
     directionsArr.forEach(move => {
 
         if (move === "L" || move === "R") {
-            const newDirection = changeDirection(rover.direction, move)
+            const newDirection = modules.changeDirection(rover.direction, move)
             rover.direction = newDirection
         }
 
@@ -100,6 +58,6 @@ console.log('Rovers: ', rovers)
 
 
 module.exports = {
-    changeDirection,
+    // changeDirection,
     getFinalPosition
 };
