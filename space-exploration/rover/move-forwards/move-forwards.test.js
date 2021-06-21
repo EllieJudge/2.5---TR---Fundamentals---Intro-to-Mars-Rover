@@ -25,15 +25,15 @@ describe('Move forwards', () => {
     let rover2 = {
         x: 1,
         y: 2,
-        direction: 'W',
+        direction: 'E',
         plateau: [5, 5]
     }
 
-    test('If rovers current direction is "W", it returns rover with X co-ordinate + 1', () => {
+    test('If rovers current direction is "E", it returns rover with X co-ordinate + 1', () => {
         expect(moveForwards(rover2)).toEqual({
             x: 2,
             y: 2,
-            direction: 'W',
+            direction: 'E',
             plateau: [5, 5]
         });
     });
