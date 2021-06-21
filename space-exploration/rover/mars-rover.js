@@ -32,6 +32,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
         if (move === "M") {
             if (rover.direction === "W")
                 modules.checkMoveIsSafe(rover)
+                // modules.moveForwards(rover)
             rover.x -= 1
 
             if (rover.direction === "E")
@@ -46,7 +47,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
                 modules.checkMoveIsSafe(rover)
             rover.y += 1
 
-            // modules.moveForwards(rover)
+            
         }
     })
 
@@ -58,7 +59,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
 getFinalPosition('5 5', '1 2 N', 'LMLMLMLMM')
 getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
 
-console.log('Rovers: ', rovers)
+// console.log('Rovers: ', rovers)
 
 
 

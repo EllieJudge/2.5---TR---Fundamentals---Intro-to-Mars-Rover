@@ -1,9 +1,14 @@
-const modules = require("../../modules");
 
 function moveForwards(rover) {
+    
+    console.log("Hiya", rover)
 
-            // if (rover.direction === "W")
-            // rover.x -= 1
+            if (rover.direction === "W")
+            rover.x -= 1
+
+            console.log("move forwards called")
+
+            return rover
 
             // if (rover.direction === "E")
             // rover.x += 1
@@ -17,3 +22,4 @@ function moveForwards(rover) {
 }
 
 module.exports = moveForwards;
+

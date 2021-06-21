@@ -1,6 +1,6 @@
 const {
     moveForwards
-} = require("../../modules");
+} = require('../../modules');
 
 
 describe('Move forwards', () => {
@@ -13,12 +13,17 @@ describe('Move forwards', () => {
     }
 
     test('If rovers current direction is "W", it returns rover with X co-ordinate - 1', () => {
-        expect(() => moveForwards(rover)).toEqual({
+        expect(moveForwards(rover)).toEqual({
             x: 0,
             y: 2,
             direction: 'W',
             plateau: [5, 5]
         });
     });
+
+
+    // test('Test what is going on', () => {
+    //     expect(moveForwards(rover)).toEqual("poop");
+    // });
     
 });

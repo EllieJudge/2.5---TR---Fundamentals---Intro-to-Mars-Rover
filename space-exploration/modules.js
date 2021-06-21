@@ -6,6 +6,6 @@ module.exports = {
     checkMoveIsSafe : require('./checks/check-move-is-safe/check-move-is-safe'),
     checkForCollisions : require('./checks/check-for-collisions/check-for-collisions'),
     changeDirection : require('./rover/change-direction/change-direction'),
-    // moveForwards : require('./rover/move-forwards/move-forwards'),
+    moveForwards : require('./rover/move-forwards/move-forwards'),
     getName : require('./rover/get-name/get-name')
 }
