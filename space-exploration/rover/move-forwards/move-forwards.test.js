@@ -37,5 +37,21 @@ describe('Move forwards', () => {
             plateau: [5, 5]
         });
     });
+
+    let rover3 = {
+        x: 1,
+        y: 2,
+        direction: 'S',
+        plateau: [5, 5]
+    }
+
+    test('If rovers current direction is "S", it returns rover with Y co-ordinate - 1', () => {
+        expect(moveForwards(rover3)).toEqual({
+            x: 1,
+            y: 1,
+            direction: 'S',
+            plateau: [5, 5]
+        });
+    });
     
 });
