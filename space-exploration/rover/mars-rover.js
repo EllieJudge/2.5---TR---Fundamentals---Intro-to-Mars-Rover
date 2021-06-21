@@ -25,6 +25,10 @@ function getFinalPosition(plateau, initialPos, instructions) {
             rover.direction = newDirection
         }
 
+        // create function moveForwards
+        // function (rover)
+        // if move === "M" ... etc
+        // returns rover.x
         if (move === "M") {
             if (rover.direction === "W")
                 modules.checkMoveIsSafe(rover)
@@ -41,6 +45,8 @@ function getFinalPosition(plateau, initialPos, instructions) {
             if (rover.direction === "N")
                 modules.checkMoveIsSafe(rover)
             rover.y += 1
+
+            // modules.moveForwards(rover)
         }
     })
 
@@ -58,6 +64,5 @@ console.log('Rovers: ', rovers)
 
 
 module.exports = {
-    // changeDirection,
     getFinalPosition
 };
