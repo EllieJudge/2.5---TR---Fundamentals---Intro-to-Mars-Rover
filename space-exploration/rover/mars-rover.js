@@ -1,12 +1,7 @@
 
-const modules = require('./modules.js');
-const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
+const modules = require('../modules');
 
 const rovers = []
-
-function getRoverName() {
-    return uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] }); 
-}
 
 function changeDirection(currentDirection, turn) {
 
@@ -92,7 +87,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
     })
 
     rovers.push(rover)
-    rovers.forEach(rover => rover.name = getRoverName())
+    rovers.forEach(rover => rover.name = modules.getName())
     return rover;
 }
 

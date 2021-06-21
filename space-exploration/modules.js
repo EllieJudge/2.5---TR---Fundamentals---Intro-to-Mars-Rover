@@ -4,5 +4,6 @@ module.exports = {
     checkMoveIsSafe : require('./checks/check-move-is-safe/check-move-is-safe'),
     checkForCollisions : require('./checks/check-for-collisions/check-for-collisions'),
     createPlateau : require('./plateau'),
-    returnsSomething : require('./checks/checks-project-set-up/check-project-set-up')
+    returnsSomething : require('./checks/checks-project-set-up/check-project-set-up'),
+    getName : require('./rover/get-name/get-name')
 }
