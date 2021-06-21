@@ -1,11 +1,9 @@
 
 const {
-    checkPlateau,
-    checkMoveIsSafe
+    createPlateau
 } = require("./plateau");
 
-let modules = require('./modules.js');
-
+const modules = require('./modules.js');
 
 let rovers = []
 
@@ -85,12 +83,8 @@ function checkForCollisions(rover, rovers) {
 
 function getFinalPosition(plateau, initialPos, instructions) {
 
-    const plat = checkPlateau(plateau)
-    // const initPos = checkInitialPosition(initialPos, plat)
-
+    const plat = createPlateau(plateau)
     const initPos = modules.checkInitialPosition(initialPos, plat);
-
-
     const directionsArr = checkInstructions(instructions)
 
     let rover = {
@@ -112,19 +106,19 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
         if (move === "M") {
             if (rover.direction === "W")
-                checkMoveIsSafe(rover)
+                modules.checkMoveIsSafe(rover)
             rover.x -= 1
 
             if (rover.direction === "E")
-                checkMoveIsSafe(rover)
+                modules.checkMoveIsSafe(rover)
             rover.x += 1
 
             if (rover.direction === "S")
-                checkMoveIsSafe(rover)
+                modules.checkMoveIsSafe(rover)
             rover.y -= 1
 
             if (rover.direction === "N")
-                checkMoveIsSafe(rover)
+                modules.checkMoveIsSafe(rover)
             rover.y += 1
         }
     })
