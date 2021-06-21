@@ -1,6 +1,6 @@
 module.exports = {
     returnsSomething : require('./checks/checks-project-set-up/check-project-set-up'),
-    createPlateau : require('./plateau'),
+    createPlateau : require('./plateau/plateau'),
     checkInitialPosition : require('./checks/check-initial-position/check-initial-position'),
     checkInstructions : require('./checks/check-instructions/check-instructions'),
     checkMoveIsSafe : require('./checks/check-move-is-safe/check-move-is-safe'),
