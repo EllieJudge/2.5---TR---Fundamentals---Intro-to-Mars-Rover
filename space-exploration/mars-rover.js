@@ -11,23 +11,6 @@ function returnsSomething() {
     return true
 }
 
-
-function checkInstructions(instructions) {
-
-    if (typeof instructions !== "string" || instructions === "") {
-        throw new Error("Error: instructions must be letters L, R or M")
-    }
-
-    const validLetters = ['L', 'R', 'M'];
-    const invalidLetters = instructions.split('').filter(letter => !validLetters.includes(letter));
-
-    if (invalidLetters.length > 0) {
-        throw new Error("Error: instructions must be letters L, R or M")
-    }
-
-    return instructions.split('') // ['L', 'M', 'L','M', 'L', 'M','L', 'M', 'M']
-}
-
 function changeDirection(currentDirection, turn) {
 
     let newDirection
@@ -85,7 +68,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
     const plat = createPlateau(plateau)
     const initPos = modules.checkInitialPosition(initialPos, plat);
-    const directionsArr = checkInstructions(instructions)
+    const directionsArr = modules.checkInstructions(instructions)
 
     let rover = {
         // give rover uuid / name
@@ -136,7 +119,7 @@ getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
 module.exports = {
     returnsSomething,
     // checkInitialPosition,
-    checkInstructions,
+    // checkInstructions,
     checkForCollisions,
     changeDirection,
     getFinalPosition
