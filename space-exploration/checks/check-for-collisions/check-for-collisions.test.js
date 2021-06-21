@@ -99,7 +99,5 @@ describe('Check for collisions', () => {
         ]
 
         expect(() => checkForCollisions(rover4, rovers4)).toThrow("Error: collision with another rover ahead! Abort! Abort!");
-
-
     });
 })

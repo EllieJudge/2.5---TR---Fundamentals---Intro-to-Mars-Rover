@@ -18,6 +18,4 @@ function createPlateau(plateau) {
 }
 
 
-module.exports = {
-    createPlateau
-};
+module.exports = createPlateau;

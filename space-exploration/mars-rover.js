@@ -1,8 +1,4 @@
 
-const {
-    createPlateau
-} = require("./plateau");
-
 const modules = require('./modules.js');
 
 let rovers = []
@@ -55,7 +51,7 @@ function changeDirection(currentDirection, turn) {
 
 function getFinalPosition(plateau, initialPos, instructions) {
 
-    const plat = createPlateau(plateau)
+    const plat = modules.createPlateau(plateau)
     const initPos = modules.checkInitialPosition(initialPos, plat);
     const directionsArr = modules.checkInstructions(instructions)
 

@@ -1,6 +1,6 @@
 const {
     createPlateau
-} = require("./plateau");
+} = require("./modules");
 
 
 describe('Check is a valid plateau', () => {
