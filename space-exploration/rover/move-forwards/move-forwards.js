@@ -6,11 +6,11 @@ function moveForwards(rover) {
             
 
             
-            // if (rover.direction === "E") {
-            //     rover.x += 1
-            // }
+            if (rover.direction === "E") 
+                rover.x += 1
             
             return rover
+            
             // if (rover.direction === "S")
             // rover.y -= 1
 
