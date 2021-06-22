@@ -16,8 +16,6 @@ describe('Move Forwards function', () => {
         move(plateau, initialPos, instructions)
         expect(move).toHaveBeenCalledTimes(1); // true
         expect(move).toHaveBeenCalledWith(plateau, initialPos, instructions);
-
     });
-
 });
 

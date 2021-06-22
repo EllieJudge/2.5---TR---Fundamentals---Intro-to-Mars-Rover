@@ -7,5 +7,6 @@ module.exports = {
     checkForCollisions : require('./checks/check-for-collisions/check-for-collisions'),
     changeDirection : require('./rover/change-direction/change-direction'),
     moveForwards : require('./rover/move-forwards/move-forwards'),
-    getName : require('./rover/get-name/get-name')
+    getName : require('./rover/get-name/get-name'),
+    // notGoingMad : require('./checks/check-not-going-mad/check-not-going-mad')
 }

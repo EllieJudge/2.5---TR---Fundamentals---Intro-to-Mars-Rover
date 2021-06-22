@@ -1,5 +1,7 @@
 function checkMoveIsSafe(rover) {
 
+    console.log("Check move been called", rover)
+
     const plateauX = rover.plateau[0]
     const plateauY = rover.plateau[1]
 
@@ -13,5 +15,7 @@ function checkMoveIsSafe(rover) {
     
     return "Safe"
 }
+
+
 
 module.exports = checkMoveIsSafe;
