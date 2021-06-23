@@ -1,9 +1,9 @@
-// const { checkMoveIsSafe } = require('../../modules');
+const { checkMoveIsSafe } = require('../../modules');
 
 // const { checkInstructions } = require('../../modules')
 
 // const checkMoveIsSafe = require('../../checks/check-move-is-safe/check-move-is-safe');
-const modules = require('../../modules');
+// const modules = require('../../modules');
 
 function moveForwards(rover) {
 
@@ -11,10 +11,10 @@ function moveForwards(rover) {
     rover.x -= 1
     
     
-    modules.checkMoveIsSafe(rover)
+    checkMoveIsSafe(rover)
     // checkMoveIsSafe(rover)
 
-    // notGoingMad()
+
 
     if (rover.direction === "E")
         // modules.checkMoveIsSafe(rover)
