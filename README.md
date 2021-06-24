@@ -51,3 +51,28 @@ Rover 2's instructions: MMRMMRMRRM
 Rover 1's end position: 1 3 N
 
 Rover 2's end position: 5 1 E
+
+
+
+
+Notes to self:
+
+- Want to figure out why tempalate literal not working in exception in check-move-safe
+
+- Check get-final-position test mock as don't think it's doing anything
+
+- Want to make it work for a circular or non-rectangular shape
+
+- Need to write read me
+
+- Need to include image of Circular Dependency issue detected by James and dispalyed by Madge
+
+- Need to add madge to dev dependencies
+
+- Add scribblings / ideas image
+
+- Add lessons learnt
+
+- Add how to run
+
+- Add with more rovers, initial positions and plateaus to test - create test for this?

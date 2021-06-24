@@ -42,8 +42,6 @@ getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
 console.log('Rovers: ', rovers)
 
 
-
-
 module.exports = {
     getFinalPosition
 };
