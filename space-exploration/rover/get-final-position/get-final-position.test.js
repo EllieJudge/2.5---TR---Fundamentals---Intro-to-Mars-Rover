@@ -4,7 +4,7 @@
 describe('Move Forwards function', () => {
 
     // this seems wrong ?? 
-    move = require('./mars-rover').getFinalPosition;
+    move = require('./get-final-position').getFinalPosition;
     move = jest.fn();
 
     it('should be called with plateau co-ordinates, rovers initial position and instructions, as arguments', () => {

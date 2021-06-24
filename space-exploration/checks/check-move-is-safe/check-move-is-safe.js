@@ -9,8 +9,9 @@ function checkMoveIsSafe(rover) {
 
     // What is it's round?!!?
 
-
     if (rover.direction === 'N' && rover.y + 1 > plateauURY) {
+        // Would like to add a template literal with info about which side it's going to fall off etc here
+        // but can't make a template literal work in the throw
         throw new Error("Error: rover is about to fall off the plateau")
     }
 
@@ -19,10 +20,7 @@ function checkMoveIsSafe(rover) {
     }
 
     if (rover.direction === 'E' && rover.x + 1 > plateauURX) {
-
-        //console.log("rover.names current position is ${rover.x} facing East. Change direction!")
-        // console.log("Template literal: ", `${rover.x}`)
-        throw new Error(`Error: rover is about to fall off the plateau`)
+        throw new Error("Error: rover is about to fall off the plateau")
     }
 
     if (rover.direction === 'W' && rover.x - 1 < 0) {

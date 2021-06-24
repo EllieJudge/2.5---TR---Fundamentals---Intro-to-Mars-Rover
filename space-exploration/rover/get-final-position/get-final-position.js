@@ -1,5 +1,5 @@
 
-const modules = require('../modules');
+const modules = require('../../modules');
 
 const rovers = []
 
