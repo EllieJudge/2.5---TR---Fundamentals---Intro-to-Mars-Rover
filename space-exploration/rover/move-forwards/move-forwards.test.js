@@ -1,6 +1,4 @@
-const {
-    moveForwards
-} = require('../../modules');
+const moveForwards = require('./move-forwards');
 
 
 describe('Move forwards', () => {

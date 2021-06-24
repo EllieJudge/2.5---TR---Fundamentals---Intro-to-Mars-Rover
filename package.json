@@ -20,6 +20,7 @@
     "jest": "^27.0.3"
   },
   "dependencies": {
+    "madge": "^5.0.0",
     "unique-names-generator": "^4.5.0"
   }
 }

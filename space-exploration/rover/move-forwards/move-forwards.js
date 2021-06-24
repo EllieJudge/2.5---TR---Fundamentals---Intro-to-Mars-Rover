@@ -1,34 +1,31 @@
-const { checkMoveIsSafe } = require('../../modules');
-
-// const { checkInstructions } = require('../../modules')
-
-// const checkMoveIsSafe = require('../../checks/check-move-is-safe/check-move-is-safe');
-// const modules = require('../../modules');
+const checkMoveIsSafe = require('../../checks/check-move-is-safe/check-move-is-safe');
 
 function moveForwards(rover) {
 
-    if (rover.direction === "W")
-    rover.x -= 1
-    
-    
-    checkMoveIsSafe(rover)
-    // checkMoveIsSafe(rover)
-
-
-
-    if (rover.direction === "E")
-        // modules.checkMoveIsSafe(rover)
-        rover.x += 1
-
-    if (rover.direction === "S")
-        // modules.checkMoveIsSafe(rover)
-        rover.y -= 1
-
-    if (rover.direction === "N")
-        // modules.checkMoveIsSafe(rover)
+    if (rover.direction === "N") {
+        checkMoveIsSafe(rover)
         rover.y += 1
+        return rover
+    }
 
-        console.log("rover2", rover)
+    if (rover.direction === "S") {
+        checkMoveIsSafe(rover)
+        rover.y -= 1
+        return rover
+    }
+
+    if (rover.direction === "E") {
+        checkMoveIsSafe(rover)
+        rover.x += 1
+        return rover
+    }
+
+    if (rover.direction === "W") {
+        checkMoveIsSafe(rover)
+        rover.x -= 1
+        return rover
+    }
+
     return rover
 }
 
