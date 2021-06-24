@@ -63,7 +63,7 @@ describe('Check move is safe', () => {
 
 
 
-describe('It works for different sized plateaus', () => {
+describe('It checks move is safe for different sized plateaus', () => {
 
     const rover1 = {
         x: 5,
@@ -86,5 +86,16 @@ describe('It works for different sized plateaus', () => {
     test('If move sends rover off plateau edge, throw error', () => {
         expect(() => checkMoveIsSafe(rover2)).toThrow("Error: rover is about to fall off the plateau");
     });
+
+    // const rover2 = {
+    //     x: 2,
+    //     y: 5, 
+    //     direction: 'W', 
+    //     plateau: [2, 4]
+    // }
+
+    // test('If move sends rover off plateau edge, throw error', () => {
+    //     expect(() => checkMoveIsSafe(rover2)).toThrow("Error: rover is about to fall off the plateau");
+    // });
     
 });

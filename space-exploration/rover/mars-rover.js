@@ -37,8 +37,9 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
 getFinalPosition('5 5', '1 2 N', 'LMLMLMLMM')
 getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
+// getFinalPosition('5 5', '3 3 E', 'MMM')
 
-// console.log('Rovers: ', rovers)
+console.log('Rovers: ', rovers)
 
 
 
