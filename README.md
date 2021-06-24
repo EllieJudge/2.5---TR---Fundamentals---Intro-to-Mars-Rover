@@ -53,9 +53,9 @@ Rover 1's end position: 1 3 N
 Rover 2's end position: 5 1 E
 
 
+-------------------------------------------
 
-
-Notes to self:
+# Notes to self:
 
 - Want to figure out why tempalate literal not working in exception in check-move-safe
 
