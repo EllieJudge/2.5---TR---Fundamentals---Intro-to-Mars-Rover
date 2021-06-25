@@ -100,6 +100,8 @@ Rover 2's end position: 5 1 E
 
 - Add more rovers, initial positions and plateaus to test - create test for this?
 
+- Want to strip out Rovers into separate get-rovers file
+
 
 ## How to Run this project:
 
