@@ -48,7 +48,7 @@ Rover 2's instructions: MMRMMRMRRM
 
 -------------------------------------------
 
-## Expected Output ➡️:
+## ➡️ Expected Output:
 
 Rover 1's end position: 1 3 N 
 
@@ -57,7 +57,7 @@ Rover 2's end position: 5 1 E
 
 -------------------------------------------
 
-## The Solution:
+# The Solution:
 
 - This solution returns the correct final position of a Rover
 
@@ -77,7 +77,7 @@ Rover 2's end position: 5 1 E
 
 -------------------------------------------
 
-### How to Run this project:
+# How to Run this project:
 
 1. Clone this repo to your local computer:
 
@@ -105,7 +105,7 @@ npm test
 
 5. Check your console, you will see a list of all the Rovers currently on Mars (in this project)!
 
-## Madge
+## How to run madge package and create a cute graph of dependencies:
 
 List dependencies from all *.js files found in this directory:
 
@@ -119,7 +119,20 @@ To check for Circular dependencies before take-off, you can run:
 madge --circular space-exploration
 ```
 
-To generate a graph of this projects dependencies you will need to install GraphViz. 
+To generate a graph of this projects dependencies you will first need to install GraphViz:
+
+Mac OS X
+
+```
+brew install graphviz || port install graphviz
+```
+Ubuntu
+
+```
+apt-get install graphviz
+```
+
+
 Then you can run:
 
 ```
