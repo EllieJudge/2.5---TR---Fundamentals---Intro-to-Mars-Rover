@@ -77,31 +77,7 @@ Rover 2's end position: 5 1 E
 
 -------------------------------------------
 
-
-# Notes to self / more to-dos:
-
-- Want to figure out why tempalate literal not working in exception in check-move-safe
-
-- Want to make it work for a circular or non-rectangular shape
-
-- Need to write read me (add workings out, circular dependencies image, lessons learnt etc)
-
-- <del>Need to include image of Circular Dependency issue detected by James and dispalyed by Madge</del>✅
-
-- <del>Need to add madge to dev dependencies</del>✅
-
-- Add scribblings / ideas image
-
-- Add lessons learnt
-
-- <del>Add how to run</del>✅
-
-- <del>Add more rovers, initial positions and plateaus to test - create test for this?</del>✅
-
-- <del>Want to strip out Rovers into separate get-rovers file</del>✅
-
-
-## How to Run this project:
+### How to Run this project:
 
 1. Clone this repo to your local computer:
 
@@ -156,6 +132,33 @@ To open this and view it in the browser you can run:
 ```
 open graph.svg
 ```
+
+-------------------------------------------
+
+# Notes to self / more to-dos:
+
+
+- Want to figure out why tempalate literal not working in exception in check-move-safe
+
+- Want to make it work for a circular or non-rectangular shape
+
+- Need to write read me (add workings out, circular dependencies image, lessons learnt etc)
+
+- <del>Need to include image of Circular Dependency issue detected by James and dispalyed by Madge</del>✅
+
+- <del>Need to add madge to dev dependencies</del>✅
+
+- Add scribblings / ideas image
+
+- Add lessons learnt
+
+- <del>Add how to run</del>✅
+
+- <del>Add more rovers, initial positions and plateaus to test - create test for this?</del>✅
+
+- <del>Want to strip out Rovers into separate get-rovers file</del>✅
+
+
 
 -------------------------------------------
 
