@@ -1,34 +1,12 @@
-// const modules = require("../../modules")
-const rovers = []
+const rovers = require('./rovers')
 
 
 function getRovers() {
-
-    return rovers
-}
-
-function addRover(rover) {
-
-    rovers.push(rover)
-    // rovers.forEach(rover => rover.name = modules.getName())
-
     return rovers
 }
 
 
-// module.exports = {
-//     getRovers : function() {
-//         return rovers
-//     },
-//     addRover : function(rover) {
-//         rovers.push(rover)
-//         rovers.forEach(rover => rover.name = modules.getName())
-//         return rovers
-//     }
-// }
-
-module.exports = { getRovers, addRover };
-
+module.exports = getRovers;
 
 
 
