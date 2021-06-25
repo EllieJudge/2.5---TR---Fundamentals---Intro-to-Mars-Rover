@@ -1,7 +1,6 @@
-
-const modules = require('../../modules');
-
+// const modules = require("../../modules")
 const rovers = []
+
 
 function getRovers() {
 
@@ -11,9 +10,25 @@ function getRovers() {
 function addRover(rover) {
 
     rovers.push(rover)
-    rovers.forEach(rover => rover.name = modules.getName())
+    // rovers.forEach(rover => rover.name = modules.getName())
 
     return rovers
 }
 
+
+// module.exports = {
+//     getRovers : function() {
+//         return rovers
+//     },
+//     addRover : function(rover) {
+//         rovers.push(rover)
+//         rovers.forEach(rover => rover.name = modules.getName())
+//         return rovers
+//     }
+// }
+
 module.exports = { getRovers, addRover };
+
+
+
+

@@ -8,4 +8,6 @@ module.exports = {
     changeDirection : require('./rover/change-direction/change-direction'),
     moveForwards : require('./rover/move-forwards/move-forwards'),
     getName : require('./rover/get-name/get-name'),
+    getRovers : require('./rover/get-rovers/get-rovers'),
+    addRover : require('./rover/get-rovers/get-rovers')
 }

@@ -1,9 +1,7 @@
 
 const modules = require('../../modules');
 
-const   { getRovers, addRover }  = require('../get-rovers/get-rovers')
-
-// const rovers = []
+// const   { getRovers, addRover }  = require('../get-rovers/get-rovers')
 
 function getFinalPosition(plateau, initialPos, instructions) {
 
@@ -18,11 +16,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
         plateau: plat
     }
 
-    // modules.checkForCollisions(rover, rovers)
-
-    modules.checkForCollisions(rover, getRovers())
-
-    // call get-rovers which calls checkForCollisions
+    modules.checkForCollisions(rover, modules.getRovers())
 
     directionsArr.forEach(move => {
 
@@ -36,10 +30,7 @@ function getFinalPosition(plateau, initialPos, instructions) {
         }
     })
 
-    // rovers.push(rover)
-    // rovers.forEach(rover => rover.name = modules.getName())
-
-    addRover(rover)
+    modules.addRover(rover)
     
     return `${rover.x} ${rover.y} ${rover.direction}`
 }
@@ -48,9 +39,6 @@ getFinalPosition('5 5', '1 2 N', 'LMLMLMLMM')
 getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
 
 console.log('Rovers: ', getRovers())
-
-
-
 
 
 module.exports = {
