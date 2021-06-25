@@ -174,7 +174,7 @@ open graph.svg
 
 -------------------------------------------
 
-## Learnings and Musings
+# Learnings and Musings
 
 -------------------------------------------
 
