@@ -32,5 +32,9 @@ describe('getFinalPosition returns a rovers final position', () => {
     test('it returns a Rovers final position', () => {
         expect(getFinalPosition('5 5', '1 1 E', 'MM')).toBe('3 1 E');
     });
+
+    test('it returns a Rovers final position', () => {
+        expect(getFinalPosition('8 8', '5 5 E', 'MML')).toBe('7 5 N');
+    });
 });
 
