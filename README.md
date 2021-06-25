@@ -28,7 +28,7 @@ The position is made up of two integers and a letter separated by spaces, corres
 
 The output for each rover should be its final co-ordinates and heading.
 
-## Test Input:
+## ➡️ Test Input:
 
 Upper-right coordinate of the plateau: 5 5
 
@@ -48,20 +48,20 @@ Rover 2's instructions: MMRMMRMRRM
 
 -------------------------------------------
 
-## Expected Output:
+## ➡️ Expected Output:
 
 Rover 1's end position: 1 3 N 
 
-Rover 2's end position: 5 1 E
+Rover 2's end position: 5 1 E 
 
 
 -------------------------------------------
 
-## The Solution:
+# The Solution:
 
-- This solution returns the correct final position a Rover
+- This solution returns the correct final position of a Rover
 
-- The solution also creates an array of the different rovers on Mars with their final positions, that Rover's upper-right coordinate of the plateau it's on and their names so they can be easily identified. This information is logged to the console
+- The solution also creates an array of the different rovers on Mars with their final positions, the upper-right coordinate of the Rover's plateau and the Rover's names so they can be easily identified. This information is logged to the console
 
 - This solution checks instructions and initial co-ordinates sent from Ground Control are valid before embarking on a Rover journey
 
@@ -77,31 +77,7 @@ Rover 2's end position: 5 1 E
 
 -------------------------------------------
 
-
-# Notes to self / more to-dos:
-
-- Want to figure out why tempalate literal not working in exception in check-move-safe
-
-- Want to make it work for a circular or non-rectangular shape
-
-- Need to write read me (add workings out, circular dependencies image, lessons learnt etc)
-
-- <del>Need to include image of Circular Dependency issue detected by James and dispalyed by Madge</del>✅
-
-- <del>Need to add madge to dev dependencies</del>✅
-
-- Add scribblings / ideas image
-
-- Add lessons learnt
-
-- <del>Add how to run</del>✅
-
-- <del>Add more rovers, initial positions and plateaus to test - create test for this?</del>✅
-
-- <del>Want to strip out Rovers into separate get-rovers file</del>✅
-
-
-## How to Run this project:
+# How to Run this project:
 
 1. Clone this repo to your local computer:
 
@@ -129,7 +105,7 @@ npm test
 
 5. Check your console, you will see a list of all the Rovers currently on Mars (in this project)!
 
-## Madge
+## How to check for Circular Dependencies:
 
 List dependencies from all *.js files found in this directory:
 
@@ -143,7 +119,19 @@ To check for Circular dependencies before take-off, you can run:
 madge --circular space-exploration
 ```
 
-To generate a graph of this projects dependencies you will need to install GraphViz. 
+To generate a cute graph of this projects dependencies (optional) you will first need to install GraphViz:
+
+Mac OS X
+
+```
+brew install graphviz || port install graphviz
+```
+Ubuntu
+
+```
+apt-get install graphviz
+```
+
 Then you can run:
 
 ```
@@ -159,7 +147,34 @@ open graph.svg
 
 -------------------------------------------
 
-## Learnings and Musings
+# Notes to self / more to-dos:
+
+
+- Want to figure out why tempalate literal not working in exception in check-move-safe
+
+- Want to make it work for a circular or non-rectangular shape
+
+- Need to write read me (add workings out, circular dependencies image, lessons learnt etc)
+
+- <del>Need to include image of Circular Dependency issue detected by James and dispalyed by Madge</del>✅
+
+- <del>Need to add madge to dev dependencies</del>✅
+
+- Add scribblings / ideas image
+
+- Add lessons learnt
+
+- <del>Add how to run</del>✅
+
+- <del>Add more rovers, initial positions and plateaus to test - create test for this?</del>✅
+
+- <del>Want to strip out Rovers into separate get-rovers file</del>✅
+
+
+
+-------------------------------------------
+
+# Learnings and Musings
 
 -------------------------------------------
 
