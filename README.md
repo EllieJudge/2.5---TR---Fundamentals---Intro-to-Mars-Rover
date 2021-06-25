@@ -71,7 +71,7 @@ Rover 2's end position: 5 1 E
 
 - This solution works for different sized plateaus
 
-- This solution gives each Rover a cool name so Rovers can be easily identified 
+- This solution gives each Rover a cool space [name](https://www.npmjs.com/package/unique-names-generator#star-wars) so Rovers can be easily identified 
 
 - This solution includes a package to check for Circular dependencies (there are none now, but it was a fun learning along the way and the images it produces are really cool - nice one [Madge!](https://www.npmjs.com/package/madge))
 
@@ -81,8 +81,6 @@ Rover 2's end position: 5 1 E
 # Notes to self / more to-dos:
 
 - Want to figure out why tempalate literal not working in exception in check-move-safe
-
-- Check get-final-position test mock as don't think it's doing anything
 
 - Want to make it work for a circular or non-rectangular shape
 
