@@ -28,7 +28,7 @@ The position is made up of two integers and a letter separated by spaces, corres
 
 The output for each rover should be its final co-ordinates and heading.
 
-## Test Input:
+## ➡️ Test Input:
 
 Upper-right coordinate of the plateau: 5 5
 
@@ -48,11 +48,11 @@ Rover 2's instructions: MMRMMRMRRM
 
 -------------------------------------------
 
-## Expected Output:
+## Expected Output ➡️:
 
-Rover 1's end position: 1 3 N ✅
+Rover 1's end position: 1 3 N 
 
-Rover 2's end position: 5 1 E ✅
+Rover 2's end position: 5 1 E 
 
 
 -------------------------------------------
