@@ -71,7 +71,7 @@ Rover 2's end position: 5 1 E
 
 - This solution gives each Rover a cool name so Rovers can be easily identified 
 
-- This solution includes a package to check for Circular dependencies (there are none now, but it was a fun learning along the way and the images it produces are really cool - nice one [madge!](https://www.npmjs.com/package/madge))
+- This solution includes a package to check for Circular dependencies (there are none now, but it was a fun learning along the way and the images it produces are really cool - nice one [Madge!](https://www.npmjs.com/package/madge))
 
 -------------------------------------------
 
