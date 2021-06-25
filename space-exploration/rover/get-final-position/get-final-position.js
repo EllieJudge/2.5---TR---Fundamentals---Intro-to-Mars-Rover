@@ -32,14 +32,14 @@ function getFinalPosition(plateau, initialPos, instructions) {
 
     rovers.push(rover)
     rovers.forEach(rover => rover.name = modules.getName())
-    return rover;
+    return `${rover.x} ${rover.y} ${rover.direction}`
 }
 
 getFinalPosition('5 5', '1 2 N', 'LMLMLMLMM')
 getFinalPosition('5 5', '3 3 E', 'MMRMMRMRRM')
-// getFinalPosition('5 5', '3 3 E', 'MMM')
 
 console.log('Rovers: ', rovers)
+
 
 
 module.exports = {
