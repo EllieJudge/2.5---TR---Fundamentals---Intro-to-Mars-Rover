@@ -1,8 +1,6 @@
 
 const modules = require('../../modules');
 
-// const   { getRovers, addRover }  = require('../get-rovers/get-rovers')
-
 function getFinalPosition(plateau, initialPos, instructions) {
 
     const plat = modules.createPlateau(plateau)
