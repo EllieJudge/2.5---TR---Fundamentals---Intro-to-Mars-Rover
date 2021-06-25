@@ -105,7 +105,7 @@ npm test
 
 5. Check your console, you will see a list of all the Rovers currently on Mars (in this project)!
 
-## How to run madge package and create a cute graph of dependencies:
+## How to check for Circular Dependencies:
 
 List dependencies from all *.js files found in this directory:
 
@@ -119,7 +119,7 @@ To check for Circular dependencies before take-off, you can run:
 madge --circular space-exploration
 ```
 
-To generate a graph of this projects dependencies you will first need to install GraphViz:
+To generate a cute graph of this projects dependencies (optional) you will first need to install GraphViz:
 
 Mac OS X
 
@@ -131,7 +131,6 @@ Ubuntu
 ```
 apt-get install graphviz
 ```
-
 
 Then you can run:
 
