@@ -1,7 +1,10 @@
-const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
+const { uniqueNamesGenerator, adjectives, colors, starWars } = require('unique-names-generator');
 
 function getName() {
-    return uniqueNamesGenerator({ dictionaries: [adjectives, colors, animals] }); 
+    const uniqueName = uniqueNamesGenerator({ dictionaries: [adjectives, colors, starWars] }); 
+    const nameSplit = uniqueName.split(' ')
+    
+    return nameSplit.join('_')
 }
 
 module.exports = getName;
