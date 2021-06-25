@@ -59,7 +59,9 @@ Rover 2's end position: 5 1 E
 
 ## The Solution:
 
-- This solution returns the correct final positions of Rovers 1 and 2 (and more) in an array with their final positions, the plateau co-ordinates and their names so they can be easily identified 
+- This solution returns the correct final position a Rover
+
+- The solution also creates an array of the different rovers on Mars with their final positions, that Rover's upper-right coordinate of the plateau it's on and their names so they can be easily identified. This information is logged to the console
 
 - This solution checks instructions and initial co-ordinates sent from Ground Control are valid before embarking on a Rover journey
 
