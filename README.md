@@ -84,7 +84,7 @@ Rover 2's end position: 5 1 E
 
 - Want to make it work for a circular or non-rectangular shape
 
-- Need to write read me
+- Need to write read me (add workings out, circular dependencies image, lessons learnt etc)
 
 - <del>Need to include image of Circular Dependency issue detected by James and dispalyed by Madge</del>✅
 
