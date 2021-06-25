@@ -38,3 +38,7 @@ describe('getFinalPosition returns a rovers final position', () => {
     });
 });
 
+describe('getFinalPosition throws error if directions are about to send rover off edge of plateau', () => {
+    expect(() => getFinalPosition('5 5', '3 3 E', 'MMMM')).toThrow("Error: rover is about to fall off the plateau");
+});
+
